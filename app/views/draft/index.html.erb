@@ -1,0 +1,18 @@
+<h1>Drafts</h1>
+
+<%= link_to "New Drafts", new_article_path %>
+
+<ul>
+  <% @articles.each do |article| %>
+  	<% if current_user.id == article.user_id %>
+    	<% unless !article.draft? %>
+      	<li>
+      		<a href="<%= article_path(article) %>/edit">
+        	<%= article.title %>
+      	</li>
+    	<% end %>
+    <% end %>
+  <% end %>
+</ul>
+<p><a href="/articles/">Go to articles</a></p>
+<a href="/">Home page</a>

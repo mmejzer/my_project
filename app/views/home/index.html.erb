@@ -10,11 +10,23 @@
     <% else %>      
         <span>Hello, <%= current_user.email %></span>
     <% end %>    
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'%>
-    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+    </br><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'%>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %></br>
+    <p><a href="/articles/">Go to my articles</a></p>
+    <p><a href="/draft/">Go to my drafts</a></p>
 <% else %>      
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
-    <br/>
-<p>Прочая информация...</p>
+
+<p>All articles</p>
+Our blog has <%= @articles.count %> articles and counting!
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.draft? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
