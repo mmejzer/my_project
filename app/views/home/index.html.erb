@@ -19,14 +19,12 @@
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 
-<p>All articles</p>
+<h2>All public articles</h2>
 Our blog has <%= @articles.count %> articles and counting!
 <ul>
   <% @articles.each do |article| %>
-    <% unless article.draft? %>
       <li>
         <%= link_to article.title, article %>
       </li>
-    <% end %>
   <% end %>
 </ul>

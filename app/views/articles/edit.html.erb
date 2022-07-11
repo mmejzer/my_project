@@ -1,6 +1,17 @@
 <h1>Edit Simple</h1>
 
-<%= render "form", article: @article %>
+<% if user_signed_in? %>
+  <%if current_user.id == @article.user_id %>
+    <%= render "form", article: @article %>
 
-<p><a href="/articles/">Go to articles</a></p>
-<p><a href="/draft/">Go to drafts</a></p>
+	<p><a href="/articles/">Go to my articles</a></p>
+	<p><a href="/draft/">Go to my drafts</a></p>
+  <% else %>
+  <p> You cannot take this action </p>
+  <p><a href="/">Back</a></p>
+  <% end %>
+<% else %>
+  <p> You cannot take this action </p>
+  <p><a href="/">Back</a></p>
+<% end %>  
+

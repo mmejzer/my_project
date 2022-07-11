@@ -11,8 +11,4 @@ class Article < ApplicationRecord
 	def draft?
     	status == 'draft'
 	end
-
-    def public_count
-      self.where(status: 'public').count
-    end
 end
