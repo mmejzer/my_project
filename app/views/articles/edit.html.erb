@@ -4,8 +4,8 @@
   <%if current_user.id == @article.user_id %>
     <%= render "form", article: @article %>
 
-	<p><a href="/articles/">Go to my articles</a></p>
-	<p><a href="/draft/">Go to my drafts</a></p>
+	<p><%= link_to 'Go to my articles', articles_path %></p>
+	<p><%= link_to 'Go to my drafts', draft_path %></p>
   <% else %>
   <p> You cannot take this action </p>
   <p><a href="/">Back</a></p>

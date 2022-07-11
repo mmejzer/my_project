@@ -9,8 +9,8 @@
       		<a href="<%= article_path(article) %>/edit">
         	<%= article.title %>
       	</li>
-    	<% end %>
+    <% end %>
   <% end %>
 </ul>
-<p><a href="/articles/">Go to my articles</a></p>
+<p><%= link_to 'Go to my articles', articles_path %></p>
 <a href="/">Home page</a>
