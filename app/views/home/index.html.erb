@@ -1,4 +1,17 @@
 <h1>All public articles</h1>
+
+<% if user_signed_in? %>
+    <% if current_user.first_name? %>
+        <% if current_user.last_name? %>
+            <span>Hello, <%= current_user.first_name %> <%= current_user.last_name %>! </br></br> </span>
+        <% else %>
+            <span>Hello, <%= current_user.first_name %>!</br></br></span>
+        <% end %>
+    <% else %>      
+        <span>Hello, <%= current_user.email %></br></br> </span>
+    <% end %>
+<% end %>
+
 Our blog has <%= @articles.count %> articles and counting!
 <ul>
   <% @articles.each do |article| %>
