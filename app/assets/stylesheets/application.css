@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+    background: #ccc;
+    margin-top: 3px;
+    margin: auto;
+    margin-top: 0px;
+}
+
 nav ul {
     margin: 0;
     padding: 0;
@@ -22,7 +30,7 @@ nav ul {
  nav li {
     display: inline-block;
     margin-left: 70px;
-    padding-top: 75px;
+    padding-top: 75px;    
  }
 
  nav a {
@@ -35,13 +43,6 @@ nav ul {
  nav a:hover {
     color: #000;
  }
-
- .navbar {
-    background: #ccc;
-    margin-top: 3px;
-    margin: auto;
-    margin-top: 0px;
-}
 
 .logo {
     float: left;
