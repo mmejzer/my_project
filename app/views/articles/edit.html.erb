@@ -3,9 +3,6 @@
 <% if user_signed_in? %>
   <%if current_user.id == @article.user_id %>
     <%= render "form", article: @article %>
-
-	<p><%= link_to 'Go to my articles', articles_path %></p>
-	<p><%= link_to 'Go to my drafts', draft_path %></p>
   <% else %>
   <p> You cannot take this action </p>
   <p><a href="/">Back</a></p>

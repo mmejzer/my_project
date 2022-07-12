@@ -13,5 +13,4 @@
    <% end %>
   <% end %>
 </ul>
-<p><%= link_to 'Go to my drafts', draft_path %></p>
-<a href="/">Home page</a>
+<%= paginate @articles, window: 2 %>
