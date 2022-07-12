@@ -1,25 +1,4 @@
-<h1>Главная страница</h1>
-
-<% if user_signed_in? %>
-    <% if current_user.first_name? %>
-        <% if current_user.last_name? %>
-            <span>Hello, <%= current_user.first_name %> <%= current_user.last_name %>!</span>
-        <% else %>
-            <span>Hello, <%= current_user.first_name %>!</span>
-        <% end %>
-    <% else %>      
-        <span>Hello, <%= current_user.email %></span>
-    <% end %>    
-    </br><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'%>
-    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %></br>
-    <p><%= link_to 'Go to my articles', articles_path %></p>
-    <p><%= link_to 'Go to my drafts', draft_path %></p>
-<% else %>      
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-
-<h2>All public articles</h2>
+<h1>All public articles</h1>
 Our blog has <%= @articles.count %> articles and counting!
 <ul>
   <% @articles.each do |article| %>
@@ -28,3 +7,4 @@ Our blog has <%= @articles.count %> articles and counting!
       </li>
   <% end %>
 </ul>
+<%#= paginate @articles%>

@@ -1,0 +1,9 @@
+<div class='sidebar'>
+	<% if user_signed_in? %>
+			
+    		<p> <%= link_to 'About me', home_about_me_path %> </p> 
+    		<p> <%= link_to 'Contact with me', home_contact_with_me_path %> </p>
+		
+	</br> <a>Application owner:</br> Marina Meizer</a>
+	<% end %>
+</div>
