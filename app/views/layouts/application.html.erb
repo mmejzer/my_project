@@ -11,7 +11,15 @@
 
   <body>
     <%= render "layouts/navbar" %>
+    <div>
     <%= render "layouts/sidebar" %>
+    <div class="container">
+    <br>
+      <% flash.each do |key, message| %>
+      <p class="alert alert-<%= key %>"><%= message %></p>
+      <% end %>
+    </div>
+    </div>
 
     <div class="main-content">
       <p class="notice"><%= notice %></p>
