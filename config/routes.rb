@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get "/draft", to: "draft#index"
   get 'home/about_me', to: 'home#about_me'
-  get 'home/contact_with_me', to: 'home#contact_with_me'
+  get '/contacts', to: 'contacts#new'
+
+  resources :contacts, only: [:create]
 
   devise_scope :user do 
     get '/users/sign_out' => 'devise/sessions#destroy'  

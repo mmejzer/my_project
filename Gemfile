@@ -5,7 +5,7 @@ ruby '2.7.6'
 
 gem 'devise'
 gem 'kaminari'
-
+gem 'mail_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
