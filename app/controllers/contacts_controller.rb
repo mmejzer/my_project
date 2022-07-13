@@ -1,8 +1,5 @@
 class ContactsController < ApplicationController
 	def new
-	  p "HELLO THERE"
-	  p ENV['GMAIL_USER']
-	  p ENV['GMAIL_PASSWORD']
 	end
 
 	def create
