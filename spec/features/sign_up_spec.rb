@@ -9,9 +9,9 @@ RSpec.describe 'create user', type: :system do
 
   scenario 'valid' do
     visit new_user_registration_path
-    fill_in 'First name', with: 'Mark'
-    fill_in 'Last name', with: 'Black'
-    fill_in 'Email', with: 'Black@gmail.com'
+    fill_in 'First name', with: Faker::Name.first_name
+    fill_in 'Last name', with: Faker::Name.last_name
+    fill_in 'Email', with: Faker::Internet.email
     fill_in 'Password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
     click_button 'Sign up'
