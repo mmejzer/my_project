@@ -12,7 +12,7 @@ RSpec.describe 'create user', type: :system do
     fill_in 'First name', with: 'Mark'
     fill_in 'Last name', with: 'Black'
     fill_in 'Email', with: 'Black@gmail.com'
-    fill_in 'Password', with: ''
+    fill_in 'Password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
     click_button 'Sign up'
     expect(page).to have_content("Welcome! You have signed up successfully.")
