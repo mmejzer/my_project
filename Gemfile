@@ -10,6 +10,8 @@ gem 'faker'
 gem 'kaminari'
 gem 'mail_form'
 gem 'rubocop', require: false
+gem 'scss_lint', require: false
+gem 'slim_lint'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
@@ -53,6 +55,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'brakeman'
 end
 
 group :test do
