@@ -26,7 +26,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--black);
+  color: var(--red);
 }
 
 .logo {
@@ -55,12 +55,12 @@ nav a:hover {
   width: 180px;
 }
 
-sid li {
+side p {
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-sid a:hover {
-  color: var(--black);
+side a:hover {
+  color: var(--red);
 }
