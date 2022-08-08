@@ -1,4 +1,10 @@
-@import 'color.css';
+//@import 'color.css';
+:root {
+  --black: #000;
+  --dark-gray: #ccc;
+  --light-gray: #eee;
+  --red: red;
+}
 
 .navbar {
   background: var(--dark-gray);
