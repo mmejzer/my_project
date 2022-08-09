@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   def index
     @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(15)
@@ -36,7 +38,8 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def article_params
-      params.require(:article).permit(:title, :body, :status, :user_id)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :status, :user_id)
+  end
 end
