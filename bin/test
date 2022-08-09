@@ -1,1 +1,5 @@
-bundle exec rspec spec
+#!/usr/bin/env sh
+
+echo "Run tests"
+
+bin/rspec spec
