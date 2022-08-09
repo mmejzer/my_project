@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
 
+gem 'bundle-audit'
 gem 'devise'
 gem 'kaminari'
 gem 'mail_form'
@@ -16,7 +17,6 @@ gem 'slim_lint'
 gem 'rails', '~> 6.0.5'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 1.1'
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -61,11 +61,11 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'capybara-screenshot'
+  gem 'faker'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', '>= 1.2.10', platforms: %i[mingw mswin x64_mingw jruby]
