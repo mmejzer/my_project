@@ -5,13 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
 
-gem 'bundle-audit'
 gem 'devise'
 gem 'kaminari'
 gem 'mail_form'
-gem 'rubocop', require: false
-gem 'scss_lint', require: false
-gem 'slim_lint'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
@@ -39,12 +35,15 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bundle-audit'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Run against this stable release
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.9'
   gem 'rspec-support', '~> 3.9.4'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'scss_lint', require: false
+  gem 'slim_lint'
 end
 
 group :development do
