@@ -1,0 +1,23 @@
+name: action-test
+on: [push]
+jobs:
+  check-quality-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.6'
+          bundler-cache: true
+      - run: bundle install
+      - run: bin/quality
+  check-functional-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.6'
+          bundler-cache: true
+      - run: bundle install
+      - run: bin/test 
