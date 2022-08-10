@@ -120,8 +120,8 @@ Rails.application.configure do
     domain: 'example.com',
     authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USER'],
-    password: ENV['GMAIL_PASSWORD'],
+    user_name: ENV.fetch('GMAIL_USER'),
+    password: ENV.fetch('GMAIL_PASSWORD'),
     open_timeout: 5,
     read_timeout: 5
   }
