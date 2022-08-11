@@ -1,35 +1,13 @@
 name: action-test
 on: [push]
-jobs:
-  
-  check-quality-tests:
+jobs:  
+  ci:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Ruby and install gems
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.7.6'
-          bundler-cache: true
-
-      - name: Install packages
-        run: bin/bundle install
-
-      - name: Run quality
-        run: bin/quality
-  
-  check-functional-tests:
-    runs-on: ubuntu-latest
-
     services:
      postgres:
-        image: postgres:14.2
+        image: postgres
         env:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
         ports: 
            - 5432:5432
         options: >-
@@ -48,18 +26,11 @@ jobs:
           ruby-version: '2.7.6'
           bundler-cache: true
 
+      - name: Run quality
+        run: bin/quality
+
       - name: Setup database
         run: bin/rails db:setup
-        env:
-          RAILS_ENV: test
-          DATABASE_HOST: localhost
-          DATABASE_USER: postgres
-          DATABASE_PASSWORD: postgres
     
       - name: Check functional test
         run: bin/test
-        env:
-          RAILS_ENV: test
-          DATABASE_HOST: localhost
-          DATABASE_USER: postgres
-          DATABASE_PASSWORD: postgres
