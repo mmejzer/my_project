@@ -10,7 +10,7 @@ gem 'kaminari'
 gem 'mail_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.0.5'
+gem 'rails', '~> 6.0.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
