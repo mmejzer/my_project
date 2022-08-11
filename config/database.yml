@@ -22,6 +22,9 @@ development:
 test:
   <<: *default
   database: my_project_test
+  host: localhost
+  username: postgres
+  password: postgres
 
 production:
   <<: *default
