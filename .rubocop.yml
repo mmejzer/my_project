@@ -10,7 +10,6 @@ AllCops:
     - db/**/*
     - vendor/**/*
 
-
 Style/Documentation:
   Enabled: false
 
