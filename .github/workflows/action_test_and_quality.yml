@@ -41,11 +41,5 @@ jobs:
           bundler-cache: true
 
       - run: yarn install
-
-      - name: Setup test database
-        env:
-          RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: mmejzer
-       - run: bin/rails db:setup
+      - run: bin/rails db:setup
       - run: bin/test
