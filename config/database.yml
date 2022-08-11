@@ -12,14 +12,16 @@ default: &default
   timeout: 5000
 
 development:
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_development
 
 test:
+  
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_test
    
 
 production:
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_production
+  
