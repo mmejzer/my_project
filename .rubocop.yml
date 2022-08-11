@@ -16,7 +16,6 @@ Metrics/BlockLength:
   Exclude:
     - config/**/*
     - spec/**/*
-    - vendor/**/*
 
 Rails/I18nLocaleTexts:
   Enabled: false
