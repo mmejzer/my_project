@@ -11,9 +11,9 @@ jobs:
       - name: Setup Ruby and install gems
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.7.6'
           bundler-cache: true
 
+      # - run: bundle install
       - name: Run quality
         run: bin/quality
   
