@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - heroku
-
 jobs:
   build:
     runs-on: ubuntu-latest
