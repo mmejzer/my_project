@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-discourse', require: false
   gem 'scss_lint', require: false
   gem 'slim_lint'
 end

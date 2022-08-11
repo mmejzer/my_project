@@ -1,13 +1,14 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-discourse
 
 AllCops:
   NewCops: enable
   Exclude:
     - bin/**/*
     - db/**/*
-    - vendor/*/**
+    - vendor/**/*
 
 
 Style/Documentation:
