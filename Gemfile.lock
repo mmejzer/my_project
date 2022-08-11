@@ -327,6 +327,7 @@ DEPENDENCIES
   rails (~> 6.0.5.1)
   rspec-rails (~> 3.9)
   rspec-support (~> 3.9.4)
+  rubocop
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)
