@@ -19,16 +19,17 @@ jobs:
   
   check-functional-tests:
     runs-on: ubuntu-latest
+
     services:
      postgres:
-        ports: 
-              - 5432:5432
+        image: postgres:14.2
         env:
-          POSTGRES_USER: mmejzer
-          POSTGRES_PASSWORD: "Inventory-121"
-          POSTGRES_DB: my_project_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: 
+           - 5432:5432
         options: >-
-          --mount type=tmpfs,destination=/var/lib/postgresql/data
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
