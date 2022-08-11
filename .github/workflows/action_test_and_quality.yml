@@ -13,33 +13,33 @@ jobs:
       - run: bundle install
       - run: bin/quality
   
-  check-functional-tests:
-    runs-on: ubuntu-latest
-    # steps:
-    #   - uses: actions/checkout@v3
-    #   - uses: actions/setup-ruby@v1
-    #     with:
-    #       ruby-version: '2.7.6'
-    #       bundler-cache: true
-    #   - run: bundle install
-    #   - run: bundle exec rake
-    #   - run: bin/test 
-    services:
-     postgres:
-        ports: 
-              - 5432:5432
-        env:
-          POSTGRES_USER: mmejzer
-          POSTGRES_PASSWORD: "Inventory-121"
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 15
+  # check-functional-tests:
+  #   runs-on: ubuntu-latest
+  #   # steps:
+  #   #   - uses: actions/checkout@v3
+  #   #   - uses: actions/setup-ruby@v1
+  #   #     with:
+  #   #       ruby-version: '2.7.6'
+  #   #       bundler-cache: true
+  #   #   - run: bundle install
+  #   #   - run: bundle exec rake
+  #   #   - run: bin/test 
+  #   services:
+  #    postgres:
+  #       ports: 
+  #             - 5432:5432
+  #       env:
+  #         POSTGRES_USER: mmejzer
+  #         POSTGRES_PASSWORD: "Inventory-121"
+  #       options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 15
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7.6'
-          bundler-cache: true
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: ruby/setup-ruby@v1
+  #       with:
+  #         ruby-version: '2.7.6'
+  #         bundler-cache: true
 
-      - run: yarn install
-      - run: bin/rails db:setup
-      - run: bin/test
+  #     - run: yarn install
+  #     - run: bin/rails db:setup
+  #     - run: bin/test
