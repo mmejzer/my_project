@@ -41,9 +41,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9'
   gem 'rspec-support', '~> 3.9.4'
   gem 'rubocop', require: false
+  gem 'rubocop-discourse', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'rubocop-discourse', require: false
   gem 'scss_lint', require: false
   gem 'slim_lint'
 end
