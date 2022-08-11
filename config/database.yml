@@ -8,23 +8,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: mmejzer
-  password: <%= ENV['MY_PROJECT_DATABASE_PASSWORD'] %>
+  url: <%= ENV["DATABASE_URL"] %>
   timeout: 5000
 
 development:
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_development
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
+  
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_test
+   
 
 production:
+  database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  database: my_project_production
-  username: my_project
-  password: <%= ENV['MY_PROJECT_DATABASE_PASSWORD'] %>
+  
