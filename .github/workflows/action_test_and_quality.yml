@@ -13,7 +13,9 @@ jobs:
         with:
           bundler-cache: true
 
-      # - run: bundle install
+      - name: Install packages
+        run: bundle install
+
       - name: Run quality
         run: bin/quality
   
