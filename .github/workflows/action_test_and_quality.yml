@@ -26,8 +26,8 @@ jobs:
           ruby-version: '2.7.6'
           bundler-cache: true
 
-      - name: Run quality
-        run: bin/quality
+      # - name: Run quality
+      #   run: bin/quality
 
       - name: Setup database
         run: bin/rails db:setup
