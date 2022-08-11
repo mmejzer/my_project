@@ -9,7 +9,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: mmejzer
-  password: <%= ENV['MY_PROJECT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['mmejzer_DATABASE_PASSWORD'] %>
   timeout: 5000
 
 development:
@@ -27,4 +27,4 @@ production:
   <<: *default
   database: my_project_production
   username: my_project
-  password: <%= ENV['MY_PROJECT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['mmejzer_DATABASE_PASSWORD'] %>
