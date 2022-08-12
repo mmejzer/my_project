@@ -2,7 +2,7 @@
 <%= form_with url: contacts_path do |form|%>
 <div>
   <%= form.label :name %><br />
-  <%= form.text_field :name, required:true %><br>
+  <%= form.text_field :name, value: (current_user.first_name if user_signed_in?), required:true %><br>
 </div>
 
 <div>
