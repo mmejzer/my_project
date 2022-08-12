@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class OrderMailer < ApplicationMailer
-  default to: 'mmejzer@gmail.com'
+  default to: ENV.fetch('GMAIL_USER')
 
   def contacts_mail(params)
     @name = params[:name]
     @email = params[:email]
     @message = params[:message]
-    @url = 'http://localhost:3000/'
+    @url = ENV.fetch('my_project_HOST')
     mail(subject: 'Rails my project')
   end
 end
