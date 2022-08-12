@@ -8,6 +8,6 @@ class OrderMailer < ApplicationMailer
     @email = params[:email]
     @message = params[:message]
     @url = ENV.fetch('HOST')
-    mail(subject: 'Rails my project #{@first_name} sent you a message')
+    mail(subject: "Rails my project #{@first_name} sent you a message")
   end
 end
