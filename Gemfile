@@ -8,6 +8,7 @@ ruby '2.7.6'
 gem 'devise'
 gem 'kaminari'
 gem 'mail_form'
+gem 'bootstrap', '~> 5.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5.1'
