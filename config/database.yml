@@ -24,4 +24,3 @@ test:
 production:
   database: <%= ENV.fetch("DB_NAME", "#{File.basename(Rails.root)}_development") %>
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL", "") %>
