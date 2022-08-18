@@ -1,72 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 :root {
   --black: #000;
-  --dark-gray: #ccc;
-  --light-gray: #eee;
-  --red: red;
+  --grey: #c9c9c9;
+  --light-black: #272727;
+  --pale-yellow: #f6f4e6;
+  --yellow: #FBFE49;
 }
+// scss-lint:disable MergeableSelector
 
-.navbar {
-  background: var(--dark-gray);
-  margin: auto;
-  margin-top: 3px;
-}
-
-nav ul {
-  list-style: none;
+* {
   margin: 0;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 75px;
-}
-
-nav a {
-  color: var(--black);
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav a:hover {
-  color: var(--red);
-}
-
-.logo {
-  float: left;
 }
 
 .notebook-logo {
   float: left;
   height: 90px;
+  margin: .7em;
   width: 90px;
 }
 
-.main-content {
-  margin-left: 180px;
-  padding: 0 10px;
+.nav-menu {
+  background: var(--light-black);
+  font-family: "Montserrat", sans-serif;
+  height: 7em;
 }
 
-.sidebar {
-  background-color: var(--light-gray);
-  color: var(--black);
-  font-size: 14;
-  height: 100%;
-  overflow-x: hidden;
-  padding-top: 10px;
-  position: fixed;
-  width: 180px;
+.nav {
+  margin-left: 120px;
 }
 
-side p {
-  font-size: 14px;
+.nav a {
+  color: var(--pale-yellow);
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: .7em;
+  padding-top: 2.5em;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all .2s ease-in-out;
 }
 
-side a:hover {
-  color: var(--red);
+.nav a:hover {
+  color: var(--yellow);
 }
+
+.side {
+  float: right;
+  padding-right: 2em;
+  padding-top: 2em;
+}
+
+.side summary {
+  cursor: pointer;
+  height: 17px;
+  outline: none;
+  padding: 12px 10px;
+  text-align: center;
+  user-select: none;
+  width: 23px;
+  writing-mode: vertical-lr;
+}
+
+.side summary::after {
+  color: var(--pale-yellow);
+  content: 'III';
+  font-size: 1.5em;
+  letter-spacing: -1px;
+}
+
+.side summary::after summary:hover {
+  color: var(--yellow);
+}
+
+.side summary:marker {
+  font-size: 0;
+}
+
+.side summary::-webkit-details-marker {
+  display: none;
+}
+
+.side details .menu {
+  animation-name: menuAnim;
+}
+
+.menu {
+  background-color: var(--grey);
+  color: var(--black);
+  display: flex;
+  font-size: 14;
+  opacity: .9;
+  overflow-x: hidden;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-top: 7px;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+
+.menu ul {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.menu a {
+  color: var(--light-black);
+  display: block;
+  font-family: Lato, sans-serif;
+  padding: 4px 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5s;
+}
+
+.menu a::after {
+  background: var(--yellow);
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  transform: scaleX(0);
+  transition: transform .5s;
+  width: 100%;
+}
+
+.menu a:hover {
+  color: var(--yellow);
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+.menu p {
+  padding-top: 15px;
+}
+
+.main-content {
+  color: var(--black);
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+}
+
+footer {
+  bottom: 0;
+  font-family: Lato, sans-serif;
+  padding: 10px;
+  position: absolute;
+}
+
