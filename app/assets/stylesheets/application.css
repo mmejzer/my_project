@@ -8,6 +8,14 @@
   --pale-yellow: #f6f4e6;
   --yellow: #FBFE49;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//scss-lint:disable MergeableSelector
+
 * {
   margin: 0;
   padding: 0;
