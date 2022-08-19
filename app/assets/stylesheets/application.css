@@ -1,17 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
+
 :root {
   --black: #000;
   --grey: #c9c9c9;
   --light-black: #272727;
+  --light-grey: #e6e6e6;
   --pale-yellow: #f6f4e6;
   --yellow: #FBFE49;
 }
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 0;  
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background:var(--pale-yellow);
+}
+
+.notice {
+  margin: 10px;
+}
+
+.alert {
+  margin: 10px;
 }
 
 //scss-lint:disable MergeableSelector
@@ -24,7 +40,8 @@
 .notebook-logo {
   float: left;
   height: 90px;
-  margin: .7em;
+  margin-top: .7em;
+  margin-left: .7em;
   width: 90px;
 }
 
@@ -147,20 +164,292 @@
   transform: scaleX(1);
 }
 
-.menu p {
-  padding-top: 15px;
-}
-
 .main-content {
+  background:var(--pale-yellow);
   color: var(--black);
   font-family: "Montserrat", sans-serif;
-  padding: 10px;
 }
 
-footer {
-  bottom: 0;
-  font-family: Lato, sans-serif;
-  padding: 10px;
-  position: absolute;
+.about-me {
+  box-sizing: border-box;
 }
 
+.about-me h1 {
+  padding-bottom: 10px;
+}
+
+.about-me p {
+  font-weight: 600;
+}
+
+.about-me .column-2 {
+  float: left;
+  width: 35%;
+  padding: 40px;
+  padding-left:70px;
+  padding-right: 70px;
+  height: 475px;
+  margin:30px;
+  margin-right:10px;
+  margin-bottom: 70px;
+  background-color: #f9dd5f;
+  line-height:2;
+}
+
+.cat {
+  height: 100%;
+}
+
+.photo {
+  text-align: center;
+}
+
+.contact-me {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-me .form {
+  width: 440px;
+  height: 540px;
+  background: var(--light-grey);
+  border-radius: 8px;
+  box-shadow: 0 0 50px -10px var(--black);
+  padding-top: 40px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+  position: fixed; 
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.contact-me h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  width: 200px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c
+}
+
+.contact-me p {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.contact-me .input {
+  width:90%;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  transition:all .3s;
+  border:2px solid #bebed2;
+}
+
+.contact-me .big-input {
+  height: 200px;
+}
+
+.contact-me .input:focus {
+  border-bottom:2px solid #78788c
+}
+
+.contact-me p:before {
+  content:attr(type);
+  display:block;
+  font-size:14px;
+}
+
+.contact-me .button {
+  float:right;
+  padding:10px 14px;
+  margin:12px 0 0;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 500;
+  border:2px solid #78788c;
+  background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+  width: 80px;
+}
+
+.contact-me .button:hover {
+  background:#78788c;
+  color:#fff
+}
+
+.sign-up {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.sign-up .form {
+  width: 440px;
+  height: 560px;
+  background: var(--light-grey);
+  border-radius: 8px;
+  box-shadow: 0 0 50px -10px var(--black);
+  padding-top: 40px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+  position: fixed; 
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.sign-up h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  width: 200px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c
+}
+
+.sign-up p {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.sign-up .input {
+  width:90%;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  transition:all .3s;
+  border:2px solid #bebed2;
+}
+
+.sign-up .input:focus {
+  border-bottom:2px solid #78788c
+}
+
+.sign-up p:before {
+  content:attr(type);
+  display:block;
+  font-size:14px;
+}
+
+.sign-up .button {
+  float:right;
+  padding:10px 14px;
+  margin:12px 0 0;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 500;
+  border:2px solid #78788c;
+  background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+  width: 80px;
+}
+
+.sign-up .button:hover {
+  background:#78788c;
+  color:#fff
+}
+
+.log-in {
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.log-in .form {
+  width: 440px;
+  height: 340px;
+  background: var(--light-grey);
+  border-radius: 8px;
+  box-shadow: 0 0 50px -10px var(--black);
+  padding-top: 40px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+  position: fixed; 
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.log-in h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  width: 200px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c
+}
+
+.log-in p {
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.log-in .input {
+  width:90%;
+  padding:10px;
+  box-sizing:border-box;
+  background:none;
+  outline:none;
+  resize:none;
+  border:0;
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  transition:all .3s;
+  border:2px solid #bebed2;
+}
+
+.log-in .input:focus {
+  border-bottom:2px solid #78788c
+}
+
+.log-in p:before {
+  content:attr(type);
+  display:block;
+  font-size:14px;
+}
+
+.log-in .button {
+  float:right;
+  padding:10px 14px;
+  margin:12px 0 0;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 500;
+  border:2px solid #78788c;
+  background:0;
+  color:#5a5a6e;
+  cursor:pointer;
+  transition:all .3s;
+  width: 80px;
+}
+
+.log-in .button:hover {
+  background:#78788c;
+  color:#fff
+}

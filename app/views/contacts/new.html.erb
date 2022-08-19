@@ -1,19 +1,23 @@
-<h1>Contact Form</h1>
-<%= form_with url: contacts_path do |form|%>
-<div>
-  <%= form.label :name %><br />
-  <%= form.text_field :name, value: (current_user.first_name if user_signed_in?), required:true %><br>
-</div>
+<div class="contact-me">
+  <div class="form">
+    <h2>Contact Form</h2>
+    <%= form_with url: contacts_path do |form|%>
+    <div>
+      <p><%= form.label :name, class: "legend"%></p>
+      <%= form.text_field :name, placeholder: "Write your name here..", class: "input", value: (current_user.first_name if user_signed_in?), required:true %><br>
+    </div>
 
-<div>
-  <%= form.label :email %><br />
-  <%= form.text_field :email, value: (current_user.email if user_signed_in?), required:true %><br>
-</div>
+    <div >
+      <p><%= form.label :email, class: "legend" %></p>
+      <%= form.text_field :email, placeholder: "Let me know how to contact you back..", class: "input", value: (current_user.email if user_signed_in?), required:true %><br>
+    </div>
 
-<div>
-  <%= form.label :message %><br />
-  <%= form.text_area :message, required:true %><br>
-</div>
+    <div>
+      <p><%= form.label :message, class: "legend" %></p>
+      <%= form.text_area :message, placeholder: "What would you like to tell me..", class: "input big-input", required:true %><br>
+    </div>
 
-<%= form.submit "send" %>
-<% end %>
+    <div><%= form.submit "Send", class: "button" %></div>
+    <% end %>
+  </div>
+</div>
