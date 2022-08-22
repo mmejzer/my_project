@@ -5,21 +5,26 @@
 :root {
   --black: #000;
   --grey: #c9c9c9;
+  --grey-blue: #78788c;
+  --grey-blue-dark: #5a5a6e;
   --light-black: #272727;
   --light-grey: #e6e6e6;
+  --light-grey-blue: #bebed2;
   --pale-yellow: #f6f4e6;
+  --white: #fff;
   --yellow: #FBFE49;
+  --yellow-2: #f9dd5f;
 }
 
 * {
   margin: 0;
-  padding: 0;  
+  padding: 0;
 }
 
 body {
+  background: var(--pale-yellow);
   height: 100%;
   margin: 0;
-  background:var(--pale-yellow);
 }
 
 .notice {
@@ -40,8 +45,8 @@ body {
 .notebook-logo {
   float: left;
   height: 90px;
-  margin-top: .7em;
   margin-left: .7em;
+  margin-top: .7em;
   width: 90px;
 }
 
@@ -165,7 +170,7 @@ body {
 }
 
 .main-content {
-  background:var(--pale-yellow);
+  background: var(--pale-yellow);
   color: var(--black);
   font-family: "Montserrat", sans-serif;
 }
@@ -183,17 +188,17 @@ body {
 }
 
 .about-me .column-2 {
+  background-color: var(--yellow-2);
   float: left;
-  width: 35%;
-  padding: 40px;
-  padding-left:70px;
-  padding-right: 70px;
   height: 475px;
-  margin:30px;
-  margin-right:10px;
+  line-height: 2;
+  margin: 30px;
   margin-bottom: 70px;
-  background-color: #f9dd5f;
-  line-height:2;
+  margin-right: 10px;
+  padding: 40px;
+  padding-left: 70px;
+  padding-right: 70px;
+  width: 35%;
 }
 
 .cat {
@@ -206,55 +211,53 @@ body {
 
 .contact-me {
   margin: 0 auto;
-  width: 100%;
   padding: 20px;
   text-align: center;
+  width: 100%;
 }
 
 .contact-me .form {
-  width: 440px;
-  height: 540px;
   background: var(--light-grey);
   border-radius: 8px;
   box-shadow: 0 0 50px -10px var(--black);
-  padding-top: 40px;
-  padding: 20px 30px;
   box-sizing: border-box;
   font-family: 'Montserrat',sans-serif;
-  position: fixed; 
-  top: 50%; left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  height: 560px;
+  left: 50%;
+  padding: 20px 30px;
+  padding-top: 40px;
+  position: fixed;
+  top: 50%;
   transform: translate(-50%, -50%);
+  width: 440px;
 }
 
 .contact-me h2 {
-  text-align: center;
+  border-bottom: 3px solid var(--grey-blue);
+  color: var(--grey-blue);
   padding-bottom: 10px;
+  text-align: center;
   width: 200px;
-  color: #78788c;
-  border-bottom: 3px solid #78788c
 }
 
 .contact-me p {
-  text-align: left;
   padding-bottom: 10px;
-  padding-top: 10px;
   padding-left: 20px;
+  padding-top: 10px;
+  text-align: left;
 }
 
 .contact-me .input {
-  width:90%;
-  padding:10px;
-  box-sizing:border-box;
-  background:none;
-  outline:none;
-  resize:none;
-  border:0;
-  font-family:'Montserrat', sans-serif;
+  background: none;
+  border: 2px solid var(--light-grey-blue);
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  transition:all .3s;
-  border:2px solid #bebed2;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  transition: all .3s;
+  width: 90%;
 }
 
 .contact-me .big-input {
@@ -262,194 +265,190 @@ body {
 }
 
 .contact-me .input:focus {
-  border-bottom:2px solid #78788c
+  border-bottom: 2px solid var(--grey-blue);
 }
 
-.contact-me p:before {
-  content:attr(type);
-  display:block;
-  font-size:14px;
+.contact-me p::before {
+  content: attr(type);
+  display: block;
+  font-size: 14px;
 }
 
 .contact-me .button {
-  float:right;
-  padding:10px 14px;
-  margin:12px 0 0;
-  font-family:'Montserrat',sans-serif;
+  background: 0;
+  border: 2px solid var(--grey-blue);
+  color: var(--grey-blue-dark);
+  cursor: pointer;
+  float: right;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  border:2px solid #78788c;
-  background:0;
-  color:#5a5a6e;
-  cursor:pointer;
-  transition:all .3s;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  transition: all .3s;
   width: 80px;
 }
 
 .contact-me .button:hover {
-  background:#78788c;
-  color:#fff
+  background: var(--grey-blue);
+  color: var(--white);
 }
 
 .sign-up {
   margin: 0 auto;
-  width: 100%;
   padding: 20px;
   text-align: center;
+  width: 100%;
 }
 
 .sign-up .form {
-  width: 440px;
-  height: 560px;
   background: var(--light-grey);
   border-radius: 8px;
   box-shadow: 0 0 50px -10px var(--black);
-  padding-top: 40px;
-  padding: 20px 30px;
   box-sizing: border-box;
   font-family: 'Montserrat',sans-serif;
-  position: fixed; 
-  top: 50%; left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  height: 560px;
+  left: 50%;
+  padding: 20px 30px;
+  padding-top: 40px;
+  position: fixed;
+  top: 50%;
   transform: translate(-50%, -50%);
+  width: 440px;
 }
 
 .sign-up h2 {
-  text-align: center;
+  border-bottom: 3px solid var(--grey-blue);
+  color: var(--grey-blue);
   padding-bottom: 10px;
+  text-align: center;
   width: 200px;
-  color: #78788c;
-  border-bottom: 3px solid #78788c
 }
 
 .sign-up p {
-  text-align: left;
   padding-bottom: 10px;
-  padding-top: 10px;
   padding-left: 20px;
+  padding-top: 10px;
+  text-align: left;
 }
 
 .sign-up .input {
-  width:90%;
-  padding:10px;
-  box-sizing:border-box;
-  background:none;
-  outline:none;
-  resize:none;
-  border:0;
-  font-family:'Montserrat', sans-serif;
+  background: none;
+  border: 2px solid var(--light-grey-blue);
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  transition:all .3s;
-  border:2px solid #bebed2;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  transition: all .3s;
+  width: 90%;
 }
 
 .sign-up .input:focus {
-  border-bottom:2px solid #78788c
+  border-bottom: 2px solid var(--grey-blue);
 }
 
-.sign-up p:before {
-  content:attr(type);
-  display:block;
-  font-size:14px;
+.sign-up p::before {
+  content: attr(type);
+  display: block;
+  font-size: 14px;
 }
 
 .sign-up .button {
-  float:right;
-  padding:10px 14px;
-  margin:12px 0 0;
-  font-family:'Montserrat',sans-serif;
+  background: 0;
+  border: 2px solid var(--grey-blue);
+  color: var(--grey-blue-dark);
+  cursor: pointer;
+  float: right;
+  font-family: 'Montserrat',sans-serif;
   font-weight: 500;
-  border:2px solid #78788c;
-  background:0;
-  color:#5a5a6e;
-  cursor:pointer;
-  transition:all .3s;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  transition: all .3s;
   width: 80px;
 }
 
 .sign-up .button:hover {
-  background:#78788c;
-  color:#fff
+  background: var(--grey-blue);
+  color: var(--white);
 }
 
 .log-in {
   margin: 0 auto;
-  width: 100%;
   padding: 20px;
   text-align: center;
+  width: 100%;
 }
 
 .log-in .form {
-  width: 440px;
-  height: 340px;
   background: var(--light-grey);
   border-radius: 8px;
   box-shadow: 0 0 50px -10px var(--black);
-  padding-top: 40px;
-  padding: 20px 30px;
   box-sizing: border-box;
   font-family: 'Montserrat',sans-serif;
-  position: fixed; 
-  top: 50%; left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  height: 340px;
+  left: 50%;
+  padding: 20px 30px;
+  padding-top: 40px;
+  position: fixed;
+  top: 50%;
   transform: translate(-50%, -50%);
+  width: 440px;
 }
 
 .log-in h2 {
-  text-align: center;
+  border-bottom: 3px solid var(--grey-blue);
+  color: var(--grey-blue);
   padding-bottom: 10px;
+  text-align: center;
   width: 200px;
-  color: #78788c;
-  border-bottom: 3px solid #78788c
 }
 
 .log-in p {
-  text-align: left;
   padding-bottom: 10px;
-  padding-top: 10px;
   padding-left: 20px;
+  padding-top: 10px;
+  text-align: left;
 }
 
 .log-in .input {
-  width:90%;
-  padding:10px;
-  box-sizing:border-box;
-  background:none;
-  outline:none;
-  resize:none;
-  border:0;
-  font-family:'Montserrat', sans-serif;
+  background: none;
+  border: 2px solid var(--light-grey-blue);
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  transition:all .3s;
-  border:2px solid #bebed2;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  transition: all .3s;
+  width: 90%;
 }
 
 .log-in .input:focus {
-  border-bottom:2px solid #78788c
+  border-bottom: 2px solid var(--grey-blue);
 }
 
-.log-in p:before {
-  content:attr(type);
-  display:block;
-  font-size:14px;
+.log-in p::before {
+  content: attr(type);
+  display: block;
+  font-size: 14px;
 }
 
 .log-in .button {
-  float:right;
-  padding:10px 14px;
-  margin:12px 0 0;
-  font-family:'Montserrat',sans-serif;
+  background: 0;
+  border: 2px solid var(--grey-blue);
+  color: var(--grey-blue-dark);
+  cursor: pointer;
+  float: right;
+  font-family: 'Montserrat',sans-serif;
   font-weight: 500;
-  border:2px solid #78788c;
-  background:0;
-  color:#5a5a6e;
-  cursor:pointer;
-  transition:all .3s;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  transition: all .3s;
   width: 80px;
 }
 
 .log-in .button:hover {
-  background:#78788c;
-  color:#fff
+  background: var(--grey-blue);
+  color: var(--white);
 }
