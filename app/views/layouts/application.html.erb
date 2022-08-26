@@ -8,39 +8,11 @@
   </head>
 
   <body>
-    <header>
-        <div class='nav-menu'>
-          <%= image_tag "notebook.png", class: "notebook-logo" %>
-          <div class='nav'>
-              <a><%= link_to "Main page", root_path %></a>
-              <% if user_signed_in? %>
-                <a><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'%></a>
-                <a><%= link_to 'My articles', articles_path %></a>
-                <a><%= link_to 'My drafts', draft_path %></a>
-                <a><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a> 
-              <% else %>
-                <a><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'%></a>
-                <a><%= link_to "Log in", new_user_session_path, :class => 'navbar-link'%></a>
-              <% end %>
-              <div class='side'>
-              <details>
-                <summary></summary>
-                  <div class="menu">
-                    <ul>
-                      <li><a><%= link_to 'About me', home_about_me_path %></a></li>
-                      <li><a><%= link_to 'Contact me', contacts_url %></a></li> 
-                    </ul>
-                  </div>
-              </details>
-            </div>
-        </div>
-      </div>
-    </header>
-
+    <%= render "layouts/navbar" %> 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <div class="main-content">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
+    </div> 
   </body>
 </html>

@@ -1,18 +1,11 @@
-<h1>All public articles</h1>
-
+<div class="main-page">
 <% if user_signed_in? %>
-    <% if current_user.first_name? %>
-        <% if current_user.last_name? %>
-            <span>Hello, <%= current_user.first_name %> <%= current_user.last_name %>! </br></br> </span>
-        <% else %>
-            <span>Hello, <%= current_user.first_name %>!</br></br></span>
-        <% end %>
-    <% else %>      
-        <span>Hello, <%= current_user.email %></br></br> </span>
-    <% end %>
+    <span><p id="hello">Hello, <%= current_user.first_name %> <%= current_user.last_name %>!</p></span>
 <% end %>
 
-Our blog has <%= @articles.count %> articles and counting!
+<h1>All public articles</h1>
+
+<p id="count-articles">Our blog has <%= @articles.count %> articles and counting!<p>
 <ul>
   <% @articles.each do |article| %>
       <li>
@@ -20,3 +13,4 @@ Our blog has <%= @articles.count %> articles and counting!
       </li>
   <% end %>
 </ul>
+</p>
