@@ -1,5 +1,5 @@
 <div class="contact-me">
-  <div class="form">
+  <div class="container">
     <h2>Contact Form</h2>
     <%= form_with url: contacts_path do |form|%>
     <div>
@@ -17,7 +17,9 @@
       <%= form.text_area :message, placeholder: "What would you like to tell me..", class: "input big-input", required:true %><br>
     </div>
 
-    <div><%= form.submit "Send", class: "button" %></div>
+    <div class="bt">
+      <%= form.submit "Send", class: "button" %>
+    </div>
     <% end %>
   </div>
 </div>
