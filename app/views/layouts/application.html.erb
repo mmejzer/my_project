@@ -9,11 +9,16 @@
 
   <body>
     <%= render "layouts/navbar" %>
-    <div class="wrapper">
-    <p class="notice"><%= notice %></p>
-    <div class="main-content">
-      <%= yield %>
-    </div>
+    <div class="wrapper">      
+      <% flash.each do |type, msg| %>
+        <div class="notice">
+          <%= notice %>
+        </div>
+      <% end %>
+      <div class="main-content">
+        <%= yield %>
+      </div>
     </div> 
+
   </body>
 </html>
