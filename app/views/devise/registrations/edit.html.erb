@@ -1,7 +1,7 @@
 <div class="edit-profile">
   <div class="container">
     <h2><div class="header">Edit profile</div></h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <div class="errors">
         <%= render "devise/shared/error_messages", resource: resource %>
       </div>
@@ -27,7 +27,7 @@
 
   <div class="field">
     <p><%= f.label :password, class: "legend" %> <i>(leave blank if you don't want to change it)</i></p>
-    <%= f.password_field :password, type: 'password', placeholder: 'new password', class: "input" %>
+    <%= f.password_field :password, class: "input" %>
     <% if @minimum_password_length %>
       <br><div class="comment"><%= @minimum_password_length %> characters minimum</div>
     <% end %>
@@ -35,7 +35,7 @@
 
   <div class="field">
     <p><%= f.label :password_confirmation, class: "legend"%></p>
-    <%= f.password_field :password_confirmation, type: 'password', placeholder: 'repet password', class: "input" %>
+    <%= f.password_field :password_confirmation, class: "input" %>
   </div> <br> 
 
   <hr>
