@@ -25,17 +25,17 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="">
+  <div class="field">
     <p><%= f.label :password, class: "legend" %> <i>(leave blank if you don't want to change it)</i></p>
-    <%= f.password_field :password, type: 'password', placeholder: 'password', class: "input" %>
+    <%= f.password_field :password, type: 'password', placeholder: 'new password', class: "input" %>
     <% if @minimum_password_length %>
       <br><div class="comment"><%= @minimum_password_length %> characters minimum</div>
     <% end %>
   </div>
 
-  <div class="">
+  <div class="field">
     <p><%= f.label :password_confirmation, class: "legend"%></p>
-    <%= f.password_field :password_confirmation, type: 'password', placeholder: 'password', class: "input" %>
+    <%= f.password_field :password_confirmation, type: 'password', placeholder: 'repet password', class: "input" %>
   </div> <br> 
 
   <hr>
