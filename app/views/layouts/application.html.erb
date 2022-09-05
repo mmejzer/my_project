@@ -8,8 +8,8 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
-    <div class="wrapper">      
+    <%= render 'layouts/navbar' %>
+    <div class="wrapper">
       <% flash.each do |type, msg| %>
         <div class="notice">
           <%= notice %>
@@ -18,7 +18,6 @@
       <div class="main-content">
         <%= yield %>
       </div>
-    </div> 
-
+    </div>
   </body>
 </html>

@@ -7,6 +7,7 @@ echo "Run quality checks"
 bin/rubocop
 bin/slim-lint app/views
 bin/scss-lint app/assets/stylesheets/
+bin/erblint --lint-all
 bin/brakeman
 bin/bundle-audit update
 bin/bundle-audit
