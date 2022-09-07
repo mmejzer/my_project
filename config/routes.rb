@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   get '/draft', to: 'draft#index'
   get 'home/about_me', to: 'home#about_me'

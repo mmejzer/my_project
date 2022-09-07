@@ -6,3 +6,13 @@
     <%= link_to "Edit", edit_article_path(@article) %>
   <% end %>
 <% end %>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<% if user_signed_in? %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+<% else %>
+  <p>You must be logged in to leave a comment</p>
+<% end %>
