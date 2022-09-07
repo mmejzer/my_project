@@ -1,13 +1,18 @@
 <h1><%= @article.title %></h1>
 
+<p>
+  <b>Posted on <%= @article.created_at.strftime("%B %d %Y") %></b>
+</p>
+
 <p><%= @article.body %></p>
 <% if user_signed_in? %>
   <%if current_user.id == @article.user_id %>
     <%= link_to "Edit", edit_article_path(@article) %>
+    <%= button_to "Destroy", article_path(@article),method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 <% end %>
 
-<h2>Comments</h2>
+<h2>Comments (<%=@article.comments.size %>)</h2>
 <%= render @article.comments %>
 
 <% if user_signed_in? %>
