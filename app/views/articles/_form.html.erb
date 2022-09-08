@@ -17,8 +17,7 @@
   
   <div class="article-title">
     <p><%= form.label :title %></p>
-    <%= form.text_field :title, autofocus: true, required:true, autocomplete: "title", placeholder: "Write article title here..", class: "input" %>
-    <%= form.hidden_field :user_id, value: current_user.id %>    
+    <%= form.text_field :title, autofocus: true, required:true, autocomplete: "title", placeholder: "Write article title here..", class: "input" %>   
   </div>
 
   <div class="article-body">
