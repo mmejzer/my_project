@@ -22,18 +22,18 @@
 
   <div class="article-body">
     <p><%= form.label :body %></p>
-    <%= form.text_area :body, required:true, autocomplete: "article text", placeholder: "Write article text here..", class: "input big-input" %><br>    
+    <%= form.text_area :body, required:true, autocomplete: "article text", placeholder: "Write article text here..", class: "input big-input" %><br>   
   </div>
 
   <div class="article-status">
-  <p>
-    <%= form.label :status %>
-    <%= form.select :status, ['public', 'draft'], {}, { class: "select-status" }%> 
-  </p>
-</div>
-<br>
-<div class="bt">
-  <%= form.submit nil, class: "button" %>
-</div>
+    <p>
+      <%= form.label :status %>
+      <%= form.select :status, ['public', 'draft'], {}, { class: "select-status" }%>
+    </p>
+  </div><br>
+
+  <div class="bt">
+    <%= form.submit nil, class: "button" %>
+  </div>
 <% end %>
 </div>
