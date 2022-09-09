@@ -7,8 +7,8 @@ RSpec.feature 'create user', js: true do
     visit new_user_registration_path
     click_button 'Sign up'
 
-    message = page.find("#first_name").native.attribute("validationMessage")
-    expect(message).to eq "Please fill out this field."
+    message = page.find('#first_name').native.attribute('validationMessage')
+    expect(message).to eq 'Please fill out this field.'
 
     # expect(page).not_to have_content('Welcome! You have signed up successfully.')
   end
