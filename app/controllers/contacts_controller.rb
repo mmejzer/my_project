@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
 
   def create
     OrderMailer.contacts_mail(contacts_params).deliver_now
-    redirect_to root_path
+    redirect_to root_path, notice: 'Message sent'
   end
 
   private

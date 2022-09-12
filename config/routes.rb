@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :articles
 
   get '/draft', to: 'draft#index'
-  get 'home/about_me', to: 'home#about_me'
+  get 'contacts/about_me', to: 'contacts#about_me'
   get '/contacts', to: 'contacts#new'
 
   resources :contacts, only: [:create]
