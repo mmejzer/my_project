@@ -12,8 +12,7 @@
 
   <ul>
     <% @articles.each do |article| %>
-     <% if current_user.id == article.user_id %>
-      <% unless article.draft? %>
+      <% if current_user.id == article.user_id %>
         <li>
           <a>
             <%= link_to article do %>
@@ -27,7 +26,6 @@
         </li>
       <% end %>
     <% end %>
-  <% end %>
   </ul>
   <%= paginate @articles, window: 2 %>
 </div>
