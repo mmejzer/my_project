@@ -1,30 +1,39 @@
+<div class="form-sample">
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
+  
+  <div class="errors">
     <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div class="message"><%= message %></div>
     <% end %>
-  </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
+      <div class="message"><%= message %></div>
+    <% end %>
+
+    <% article.errors.full_messages_for(:status).each do |message| %>
+      <div class="message"><%= message %></div>
     <% end %>
   </div>
+  
+  <div class="article-title">
+    <p><%= form.label :title %></p>
+    <%= form.text_field :title, autofocus: true, required:true, autocomplete: "title", placeholder: "Write article title here..", class: "input" %>   
+  </div>
 
-  <div>
-  <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'draft'] %><br>
-  <% article.errors.full_messages_for(:status).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-</div>
-<br>
-<div>
-  <%= form.submit %>
-</div>
+  <div class="article-body">
+    <p><%= form.label :body %></p>
+    <%= form.text_area :body, required:true, autocomplete: "article text", placeholder: "Write article text here..", class: "input big-input" %><br>   
+  </div>
+
+  <div class="article-status">
+    <p>
+      <%= form.label :status %>
+      <%= form.select :status, ['public', 'draft'], {}, { class: "select-status" }%>
+    </p>
+  </div><br>
+
+  <div class="bt">
+    <%= form.submit nil, class: "button" %>
+  </div>
 <% end %>
+</div>

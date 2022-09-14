@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   get '/draft', to: 'draft#index'
-  get 'home/about_me', to: 'home#about_me'
+  get 'contacts/about_me', to: 'contacts#about_me'
   get '/contacts', to: 'contacts#new'
 
   resources :contacts, only: [:create]
