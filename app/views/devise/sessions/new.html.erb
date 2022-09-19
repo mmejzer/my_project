@@ -2,18 +2,16 @@
   <div class="container">
     <h2>Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div  class="alert">
-        <%= alert %>
+      <div class="alert"> <%= alert %> </div>
+
+      <div class="field">
+        <p><%= f.label :email %></p>
+        <%= f.email_field :email, autofocus: true, required: true, autocomplete: 'email', placeholder: 'Email', class: 'input' %>
       </div>
 
       <div class="field">
-        <p><%= f.label :email, class: "legend" %></p>
-        <%= f.email_field :email, autofocus: true, required:true, autocomplete: "email", placeholder: "Email", class: "input" %>
-      </div>
-
-      <div class="field">
-        <p><%= f.label :password, class: "legend" %> </p>
-        <%= f.password_field :password, autofocus: true, required:true, autocomplete: "current-password", placeholder: "Password", class: "input" %>
+        <p><%= f.label :password %> </p>
+        <%= f.password_field :password, autofocus: true, required: true, autocomplete: 'current-password', placeholder: 'Password', class: 'input' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -26,10 +24,10 @@
       <% end %>
 
       <div class="actions bt">
-        <%= f.submit "Log in", class: "button" %>
+        <%= f.submit 'Log in', class: 'button' %>
       </div>
 
-      <p><a><%= link_to "Forgot your password?", new_password_path(resource_name) %></a></p>
+      <p><a><%= link_to 'Forgot your password?', new_password_path(resource_name) %></a></p>
 
     <% end %>
   </div>

@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'bundle-audit'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'erb_lint', require: false
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.9'
   gem 'rspec-support', '~> 3.9.4'

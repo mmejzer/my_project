@@ -3,22 +3,22 @@
     <h2><div class="header">Edit profile</div></h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <div class="errors">
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render 'devise/shared/error_messages', resource: resource %>
       </div>
 
   <div class="field">
-    <p><%= f.label :first_name, class: "legend" %></p>
-    <%= f.text_field :first_name, required:true, class: "input" %>
+    <p><%= f.label :first_name %></p>
+    <%= f.text_field :first_name, required: true, class: 'input' %>
   </div>
 
     <div class="field">
-    <p><%= f.label :last_name, class: "legend" %></p>
-    <%= f.text_field :last_name, required:true, class: "input" %>
+    <p><%= f.label :last_name %></p>
+    <%= f.text_field :last_name, required: true, class: 'input' %>
   </div>
 
   <div class="field">
-    <p><%= f.label :email, class: "legend" %></p>
-    <%= f.email_field :email, required:true, class: "input" %>
+    <p><%= f.label :email %></p>
+    <%= f.email_field :email, required: true, class: 'input' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -26,27 +26,27 @@
   <% end %>
 
   <div class="field">
-    <p><%= f.label :password, class: "legend" %> <i>(leave blank if you don't want to change it)</i></p>
-    <%= f.password_field :password, class: "input" %>
+    <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></p>
+    <%= f.password_field :password, class: 'input' %>
     <% if @minimum_password_length %>
       <br><div class="comment"><%= @minimum_password_length %> characters minimum</div>
     <% end %>
   </div>
 
   <div class="field">
-    <p><%= f.label :password_confirmation, class: "legend"%></p>
-    <%= f.password_field :password_confirmation, class: "input" %>
-  </div> <br> 
+    <p><%= f.label :password_confirmation %></p>
+    <%= f.password_field :password_confirmation, class: 'input' %>
+  </div> <br>
 
   <hr>
   <div class="field">
-    <p><%= f.label :current_password, class: "legend" %> <i>(we need your current password to confirm your changes)</i></p>
-    <%= f.password_field :current_password, required:true, autocomplete: "current-password", class: "input" %>
+    <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></p>
+    <%= f.password_field :current_password, required: true, autocomplete: 'current-password', class: 'input' %>
   </div>
 
-  </br>
+  <br>
   <div class="actions bt">
-    <%= f.submit "Update", class: "button" %>
+    <%= f.submit 'Update', class: 'button' %>
   </div>
 <% end %>
 </div>
