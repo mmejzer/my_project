@@ -919,11 +919,44 @@ nav {
 .article-title {
   font-size: 1.2em;
   word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.title {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.edit-link {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.delete-button {
+  display: inline-block;
+  white-space: nowrap;
+
+  .button-delete {
+    border: none;
+    background-color: var(--light-grey);
+
+    &:hover {
+      color: var(--darkred);
+    }
+  }
 }
 
 .article-body {
   font-size: 1.2em;
   word-wrap: break-word;
+  line-height: 1.5;
 }
 
 .article-status {
@@ -943,7 +976,6 @@ nav {
   height: 100%;
 
   h1 {
-    margin-bottom: 10px;
     text-align: center;
   }
 
@@ -969,6 +1001,12 @@ nav {
     &:hover {
       color: var(--darkred);
     }
+  }
+
+  .publication-date {
+    text-align: center;
+    margin-bottom: 15px;
+    font-style: italic;
   }
 }
 
