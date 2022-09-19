@@ -1,29 +1,29 @@
 <div class="edit-password">
   <div class="container">
-<h2><div class="header">Change your password</div></h2>
+    <h2 class="header">Change your password</h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-<div class="errors">
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
-</div>
+    <div class="errors">
+      <%= render 'devise/shared/error_messages', resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+    </div>
 
-  <div class="field">
-    <p><%= f.label :password, "New password" %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em></p>
-      <% end %>
-    <%= f.password_field :password, autofocus: true, required:true, autocomplete: "new-password", placeholder: "Create and write your new passord..", class: "input"%>
+      <div class="field">
+        <p><%= f.label :password, 'New password' %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em></p>
+          <% end %>
+        <%= f.password_field :password, autofocus: true, required: true, autocomplete: 'new-password', placeholder: 'Create and write your new passord..', class: 'input' %>
+      </div>
+
+      <div class="field">
+        <p><%= f.label :password_confirmation, 'Confirm new password' %></p>
+        <%= f.password_field :password_confirmation, autofocus: true, required: true, autocomplete: 'new-password', placeholder: 'Repet password..', class: 'input' %>
+      </div>
+
+      <div class="actions bt">
+        <%= f.submit 'Change my password', class: 'button' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <p><%= f.label :password_confirmation, "Confirm new password" %></p>
-    <%= f.password_field :password_confirmation, autofocus: true, required:true, autocomplete: "new-password", placeholder: "Repet password..", class: "input"%>
-  </div>
-
-  <div class="actions bt">
-    <%= f.submit "Change my password", class: "button" %>
-  </div>
-<% end %>
-</div>
 </div>

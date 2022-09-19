@@ -62,6 +62,13 @@ GEM
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
     bcrypt (3.1.18)
+    better_html (2.0.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -99,6 +106,13 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    erb_lint (0.2.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.11.0)
     execjs (2.8.1)
     factory_bot (6.2.1)
@@ -273,6 +287,7 @@ GEM
     slim_lint (0.22.1)
       rubocop (>= 0.78.0)
       slim (>= 3.0, < 5.0)
+    smart_properties (1.17.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -330,6 +345,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   capybara-screenshot
   devise
+  erb_lint
   factory_bot_rails
   faker
   jbuilder (~> 2.7)

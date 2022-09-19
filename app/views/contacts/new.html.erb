@@ -1,24 +1,24 @@
 <div class="contact-me">
   <div class="container">
     <h2><div class="header">Contact Form</div></h2>
-    <%= form_with url: contacts_path do |form|%>
+    <%= form_with url: contacts_path do |form| %>
     <div>
-      <p><%= form.label :name, class: "legend"%></p>
-      <%= form.text_field :name, placeholder: "Write your name here..", class: "input", value: (current_user.first_name if user_signed_in?), required:true %><br>
-    </div>
-
-    <div >
-      <p><%= form.label :email, class: "legend" %></p>
-      <%= form.text_field :email, placeholder: "Let me know how to contact you back..", class: "input", value: (current_user.email if user_signed_in?), required:true %><br>
+      <p><%= form.label :name %></p>
+      <%= form.text_field :name, placeholder: 'Write your name here..', class: 'input', value: (current_user.first_name if user_signed_in?), required: true %><br>
     </div>
 
     <div>
-      <p><%= form.label :message, class: "legend" %></p>
-      <%= form.text_area :message, placeholder: "What would you like to tell me..", class: "input big-input", required:true %><br>
+      <p><%= form.label :email %></p>
+      <%= form.text_field :email, placeholder: 'Let me know how to contact you back..', class: 'input', value: (current_user.email if user_signed_in?), required: true %><br>
+    </div>
+
+    <div>
+      <p><%= form.label :message %></p>
+      <%= form.text_area :message, placeholder: 'What would you like to tell me..', class: 'input big-input', required: true %><br>
     </div>
 
     <div class="bt">
-      <%= form.submit "Send", class: "button" %>
+      <%= form.submit 'Send', class: 'button' %>
     </div>
     <% end %>
   </div>
