@@ -2,7 +2,8 @@
 
 class Comment < ApplicationRecord
   belongs_to :article
+  belongs_to :user
 
-  validates :commenter, presence: true
+  =beginvalidates :commenter, presence: true=end
   validates :body, presence: true
 end

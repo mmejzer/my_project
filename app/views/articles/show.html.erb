@@ -28,18 +28,26 @@
       </h1>
     </div>
 
-<p class="publication-date">
-  Posted on <%= @article.created_at.strftime('%d %B %Y') %>
-</p>
+    <p class="publication-date">
+      Posted on <%= @article.created_at.strftime('%d %B %Y') %>
+    </p>
 
-<p><%= simple_format(@article.body) %></p>
+    <div class="article-body-show"><%= simple_format(@article.body) %></div>
+    <hr>
 
-<h2>Comments (<%= @article.comments.size %>)</h2>
-<%= render @article.comments %>
+    <h2 class="commets-header">Comments (<%= @article.comments.size %>)</h2>
 
-<% if user_signed_in? %>
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
-<% else %>
-  <p>You must be logged in to leave a comment</p>
-<% end %>
+    <div class="comments-container">
+      <%= render @article.comments %>
+    </div>
+
+      <% if user_signed_in? %>
+        <div class="comments-container">
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %>
+      </div>
+      <% else %>
+        <p>You must be logged in to leave a comment</p>
+      <% end %>
+  </div>
+</div>
