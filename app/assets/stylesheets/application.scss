@@ -8,7 +8,7 @@
   --grey-blue: #78788c;
   --grey-blue-dark: #5a5a6e;
   --grey-blue-dark-dark: #1B1B21;
-  --grey-blue-dark-light:#ACACB6;
+  --grey-blue-dark-light: #ACACB6;
   --light-black: #272727;
   --light-grey: #e6e6e6;
   --light-grey-blue: #bebed2;
@@ -1012,8 +1012,9 @@ p {
     font-family: 'Montserrat',sans-serif;
     height: 100%;
     margin: 0 auto;
+    padding: 10px 20px;
+
   }
- 
 
   a {
     color: var(--grey-blue-dark);
@@ -1031,107 +1032,117 @@ p {
 
   .comments-container {
     background: var(--grey-blue-dark-light);
-    box-sizing: border-box;
-    margin: 10px 50px;
-    color: var(--black);
     border-radius: 20px;
+    box-sizing: border-box;
+    color: var(--black);
+    margin: 10px 50px;
     padding: 20px 50px;
 
-    .comments-form {
-      display: block;
-      position: relative;
+    p {
+      font-size: 1.1em;
+      font-weight: normal;
+    }
 
-      .comment {
-        font-weight: normal;
-        padding: 0 15px;
-        font-size: 1.3em;
-      }
-
-      .comment-date {
-        text-align: right;
-      }
-
-      p {
-        padding: 10px 5px;
-        font-size: 1.4em;
-        font-weight: 600;
-      }
-
-      .input {
-        background: none;
-        border: 2px solid var(--black);
-        box-sizing: border-box;
-        color: var(--black);
-        font-family: 'Montserrat', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        outline: none;
-        padding: 10px;
-        resize: none;
-        transition: all .3s;
-        width: 100%;
-
-        &::-webkit-input-placeholder { color: var(--grey-blue-dark); }
-
-        &:focus {
-          border-bottom: 2px solid var(--grey-blue);
-        }
-      }
-
-      .big-input {
-        height: 300px;
-        color: var(--black);
-      }
-
-      .bt {
-        text-align: right;
-        color: var(--black);
-      }
-
-      .button {
-        background: 0;
-        border: 2px solid var(--grey-blue);
-        color: var(--black);
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 1.1em;
-        margin: 6px 0 0;
-        object-position: right bottom;
-        padding: 10px 14px;
-        transition: all .3s;
-        width: auto;
-
-        &:hover {
-          background: var(--grey-blue);
-          color: var(--white);
-        }
-      }
-
-      .author-comment {
-        display: inline-block;
-        white-space: nowrap;
-      }
-
-      .delete-button {
-        display: inline-block;
-        white-space: nowrap;
-        position: absolute;
-        right: 0;
-        padding: 10px 5px;
-        
-
-        .button-delete {
-          background: 0;
-          border: 0;
-
-          &:hover {
-            color: var(--light-grey);
-          }
-        }
-      }
-    }    
+    a {
+      font-size: 1.1em;
+      font-weight: normal;
+      text-decoration: underline;
+    }
   }
 }
 
+.comments-form {
+  display: block;
+  position: relative;
 
+  .comment {
+    font-size: 1.3em;
+    font-weight: normal;
+    padding: 0 15px;
+  }
+
+  .comment-date {
+    text-align: right;
+  }
+
+  p {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 10px 5px;
+  }
+
+  .input {
+    background: none;
+    border: 2px solid var(--black);
+    box-sizing: border-box;
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    padding: 10px;
+    resize: none;
+    transition: all .3s;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      color: var(--grey-blue-dark);
+    }
+
+    &:focus {
+      border-bottom: 2px solid var(--grey-blue);
+    }
+  }
+
+  .big-input {
+    color: var(--black);
+    height: 300px;
+  }
+
+  .bt {
+    color: var(--black);
+    text-align: right;
+  }
+
+  .button {
+    background: 0;
+    border: 2px solid var(--grey-blue);
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 6px 0 0;
+    object-position: right bottom;
+    padding: 10px 14px;
+    transition: all .3s;
+    width: auto;
+
+    &:hover {
+      background: var(--grey-blue);
+      color: var(--white);
+    }
+  }
+
+  .author-comment {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .delete-button {
+    display: inline-block;
+    padding: 10px 5px;
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+  }
+
+  .button-delete {
+    background: 0;
+    border: 0;
+
+    &:hover {
+      color: var(--light-grey);
+    }
+  }
+}

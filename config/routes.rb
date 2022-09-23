@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/draft', to: 'draft#index'
   get 'contacts/about_me', to: 'contacts#about_me'
   get '/contacts', to: 'contacts#new'
- =begin get '/articles/:article_id/comments/edit(.:format)', to: 'comments#edit'=end
+  # get '/articles/:article_id/comments/edit(.:format)', to: 'comments#edit'=end
 
   resources :contacts, only: [:create]
 
