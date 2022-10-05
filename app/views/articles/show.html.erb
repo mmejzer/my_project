@@ -27,27 +27,30 @@
     </div>
 
     <p class="publication-date">
-      Posted on <%= @article.created_at.strftime('%d %B %Y') %>
+      Posted on <%= @article.created_at.strftime('%H:%M %d %B %Y') %><br>
+      Update on <%= @article.updated_at.strftime('%H:%M %d %B %Y') %>
     </p>
 
     <div class="article-body-show"><%= simple_format(@article.body) %></div>
+
+    <p><a><%= link_to 'Main page', root_path %></a></p><br>
     <hr>
 
-    <h2 class="commets-header">Comments (<%= @article.comments.size %>)</h2>
+    <h2 class="commets-header">Comments (<%= @article.comments.count %>)</h2>
 
     <% unless @article.comments.size==0 %>
       <%= render @article.comments %>
     <% end %>
 
-      <% if user_signed_in? %>
-        <div class="comments-container">
-        <h2>Add a comment:</h2>
-        <%= render 'comments/form' %>
-      </div>
-      <% else %>
+    <% if user_signed_in? %>
       <div class="comments-container">
-        <p>You must be logged in to leave a comment. Do you want to <%= link_to 'login', new_user_session_path %>/<a><%= link_to 'register', new_user_registration_path %></a>?</p>
+        <h2>Add a comment:</h2>
+        <%= render 'comments/comment_form', comment: [@article, @article.comments.build] %>
       </div>
-      <% end %>
+    <% else %>
+    <div class="comments-container">
+      <p>You must be logged in to leave a comment. Do you want to <%= link_to 'login', new_user_session_path %>/<a><%= link_to 'register', new_user_registration_path %></a>?</p>
+    </div>
+    <% end %>
   </div>
 </div>

@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.user_id = current_user.id
 
     if @article.update(article_params)
       redirect_to @article
@@ -40,6 +41,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+    @article.user_id = current_user.id
     @article.destroy
     flash.notice = "Article '#{@article.title}' deleted!"
     redirect_to root_path, status: :see_other
