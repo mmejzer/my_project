@@ -1055,6 +1055,42 @@ p {
   display: block;
   position: relative;
 
+  .right-side-buttons {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    padding: 0 5px;
+  }
+
+  .edit-link {
+    display: inline-block;
+    white-space: nowrap;
+    background: 0;
+    color: var(--black);
+    width: auto;
+    //position: relative;
+
+    &:hover {
+      color: var(--light-grey);
+    }
+  }
+
+  .delete-button {
+    display: inline-block;
+    padding: 10px 5px;
+    //position: absolute;
+    //right: 0;
+    white-space: nowrap;
+  }
+
+  .edit-comment {
+    display: none;
+
+    h2 {
+      padding-top: 10px;
+    }
+  }
+
   .comment {
     font-size: 1.3em;
     font-weight: normal;
@@ -1096,7 +1132,7 @@ p {
 
   .big-input {
     color: var(--black);
-    height: 300px;
+    height: 200px;
   }
 
   .bt {
@@ -1129,13 +1165,7 @@ p {
     white-space: nowrap;
   }
 
-  .delete-button {
-    display: inline-block;
-    padding: 10px 5px;
-    position: absolute;
-    right: 0;
-    white-space: nowrap;
-  }
+  
 
   .button-delete {
     background: 0;

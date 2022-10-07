@@ -1,16 +1,9 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :authenticate_user! # , except: [:index]
+  before_action :authenticate_user!
   before_action :find_article
-
-  # def index
-  #   @comments = @article.comments.order(created_at: :desc)
-  # end
-
-  # def show
-  #   @comment = @article.comments.build
-  # end
+  before_action :find_comment, only: [:show, :edit, :update, :destroy]
 
   def create
     @comment = @article.comments.new(comment_params)
@@ -24,11 +17,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = @article.comments.find(params[:id])
   end
 
   def update
-    @comment = @article.comments.find(params[:id])
     @comment.user_id = current_user.id
 
     if @comment.update(comment_params)
@@ -39,7 +30,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @article.comments.find(params[:id])
     @comment.user_id = current_user.id
     if @comment.destroy
       redirect_to article_path(@article), status: :see_other, notice: 'Comment deleted!'
@@ -52,6 +42,10 @@ class CommentsController < ApplicationController
 
   def find_article
     @article = Article.find(params[:article_id])
+  end
+
+  def find_comment
+    @comment = @article.comments.find(params[:id])
   end
 
   def comment_params

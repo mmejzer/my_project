@@ -6,7 +6,3 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true, allow_blank: false
 end
-
-# rails db:rollback STEP=1
-# change migration
-# rails db:migrate

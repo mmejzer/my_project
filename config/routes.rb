@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :edit, :update, :delete]
   end
 
   get '/draft', to: 'draft#index'
