@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :edit, :update, :destroy]
-  
+  before_action :find_article, only: %i[show edit update destroy]
+
   def index
     @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(15)
   end
@@ -26,8 +26,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @article.user_id = current_user.id

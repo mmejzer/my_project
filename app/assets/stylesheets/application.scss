@@ -1056,19 +1056,18 @@ p {
   position: relative;
 
   .right-side-buttons {
+    padding: 0 5px;
     position: absolute;
     right: 0;
     top: -10px;
-    padding: 0 5px;
   }
 
   .edit-link {
-    display: inline-block;
-    white-space: nowrap;
     background: 0;
     color: var(--black);
+    display: inline-block;
+    white-space: nowrap;
     width: auto;
-    //position: relative;
 
     &:hover {
       color: var(--light-grey);
@@ -1164,8 +1163,6 @@ p {
     display: inline-block;
     white-space: nowrap;
   }
-
-  
 
   .button-delete {
     background: 0;
