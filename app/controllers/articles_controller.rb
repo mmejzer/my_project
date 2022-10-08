@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :find_article, only: %i[show edit update destroy]
+  before_action :set_article, only: %i[show edit update destroy]
 
   def index
     @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(15)
@@ -29,8 +29,6 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def update
-    @article.user_id = current_user.id
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -39,7 +37,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.user_id = current_user.id
     @article.destroy
     flash.notice = "Article '#{@article.title}' deleted!"
     redirect_to root_path, status: :see_other
@@ -47,7 +44,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def find_article
+  def set_article
     @article = Article.find(params[:id])
   end
 

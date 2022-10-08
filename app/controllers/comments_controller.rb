@@ -2,8 +2,8 @@
 
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_article
-  before_action :find_comment, only: %i[edit update destroy]
+  before_action :set_article
+  before_action :set_comment, only: %i[edit update destroy]
 
   def create
     @comment = @article.comments.new(comment_params)
@@ -16,11 +16,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+  end
 
   def update
-    @comment.user_id = current_user.id
-
     if @comment.update(comment_params)
       redirect_to article_path(@article), notice: 'Your comment was edited'
     else
@@ -29,7 +28,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.user_id = current_user.id
     if @comment.destroy
       redirect_to article_path(@article), status: :see_other, notice: 'Comment deleted!'
     else
@@ -39,11 +37,11 @@ class CommentsController < ApplicationController
 
   private
 
-  def find_article
+  def set_article
     @article = Article.find(params[:article_id])
   end
 
-  def find_comment
+  def set_comment
     @comment = @article.comments.find(params[:id])
   end
 

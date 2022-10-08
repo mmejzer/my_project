@@ -6,8 +6,6 @@ RSpec.feature 'create user', js: true do
   scenario 'empty first_name, last_name, email and password' do
     visit new_user_registration_path
     click_button 'Sign up'
-    # message = page.find('#first_name').native.attribute('validationMessage')
-    # expect(message).to eq 'Заполните это поле'
     expect(page).not_to have_content('Welcome! You have signed up successfully.')
   end
 

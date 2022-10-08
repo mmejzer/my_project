@@ -50,7 +50,7 @@
               </h3>
             </span>
 
-            <% if user_signed_in? && current_user.id == @article.user_id %>
+            <% if user_signed_in? && current_user.id == comment.user_id %>
             <div class="right-side-buttons">
               <a>
                 <span class="edit-link js-edit-comment-button">
