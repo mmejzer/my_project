@@ -7,6 +7,8 @@
   --grey: #c9c9c9;
   --grey-blue: #78788c;
   --grey-blue-dark: #5a5a6e;
+  --grey-blue-dark-dark: #1B1B21;
+  --grey-blue-dark-light: #ACACB6;
   --light-black: #272727;
   --light-grey: #e6e6e6;
   --light-grey-blue: #bebed2;
@@ -14,6 +16,7 @@
   --white: #fff;
   --yellow: #FBFE49;
   --yellow-2: #f9dd5f;
+  --yellow-light: #FEFAAD;
   --yellowgreen: yellowgreen;
 }
 
@@ -836,7 +839,7 @@ nav {
     height: 100%;
     margin: 0 auto;
     padding: 20px 70px;
-    width: 1000px;
+    //width: 1000px;
   }
 }
 
@@ -917,12 +920,45 @@ nav {
 }
 
 .article-title {
+  display: block;
   font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
   word-wrap: break-word;
+
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.title {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.edit-link {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.delete-button {
+  display: inline-block;
+  white-space: nowrap;
+
+  .button-delete {
+    background-color: var(--light-grey);
+    border: 0;
+
+    &:hover {
+      color: var(--darkred);
+    }
+  }
 }
 
 .article-body {
   font-size: 1.2em;
+  line-height: 1.5;
   word-wrap: break-word;
 }
 
@@ -939,12 +975,35 @@ nav {
   margin-left: 10px;
 }
 
+p {
+  &.publication-date {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+.article-body-show {
+  font-size: 1.5em;
+  padding: 20px 50px;
+  text-align: justify;
+
+  p {
+    padding: 8px 0;
+    text-indent: 50px;
+  }
+}
+
 .article {
   height: 100%;
 
   h1 {
-    margin-bottom: 10px;
     text-align: center;
+  }
+
+  .commets-header {
+    padding: 10px 100px;
   }
 
   .container {
@@ -953,8 +1012,8 @@ nav {
     font-family: 'Montserrat',sans-serif;
     height: 100%;
     margin: 0 auto;
-    padding: 20px 70px;
-    width: 1000px;
+    padding: 10px 20px;
+
   }
 
   a {
@@ -970,5 +1029,147 @@ nav {
       color: var(--darkred);
     }
   }
+
+  .comments-container {
+    background: var(--grey-blue-dark-light);
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: var(--black);
+    margin: 10px 50px;
+    padding: 20px 50px;
+
+    p {
+      font-size: 1.1em;
+      font-weight: normal;
+    }
+
+    a {
+      font-size: 1.1em;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+  }
 }
 
+.comments-form {
+  display: block;
+  position: relative;
+
+  .right-side-buttons {
+    padding: 0 5px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+  }
+
+  .edit-link {
+    background: 0;
+    color: var(--black);
+    display: inline-block;
+    white-space: nowrap;
+    width: auto;
+
+    &:hover {
+      color: var(--light-grey);
+    }
+  }
+
+  .delete-button {
+    display: inline-block;
+    padding: 10px 5px;
+    //position: absolute;
+    //right: 0;
+    white-space: nowrap;
+  }
+
+  .edit-comment {
+    display: none;
+
+    h2 {
+      padding-top: 10px;
+    }
+  }
+
+  .comment {
+    font-size: 1.3em;
+    font-weight: normal;
+    padding: 0 15px;
+  }
+
+  .comment-date {
+    text-align: right;
+  }
+
+  p {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 10px 5px;
+  }
+
+  .input {
+    background: none;
+    border: 2px solid var(--black);
+    box-sizing: border-box;
+    color: var(--black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    padding: 10px;
+    resize: none;
+    transition: all .3s;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      color: var(--grey-blue-dark);
+    }
+
+    &:focus {
+      border-bottom: 2px solid var(--grey-blue);
+    }
+  }
+
+  .big-input {
+    color: var(--black);
+    height: 200px;
+  }
+
+  .bt {
+    color: var(--black);
+    text-align: right;
+  }
+
+  .button {
+    background: 0;
+    border: 2px solid var(--grey-blue);
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 6px 0 0;
+    object-position: right bottom;
+    padding: 10px 14px;
+    transition: all .3s;
+    width: auto;
+
+    &:hover {
+      background: var(--grey-blue);
+      color: var(--white);
+    }
+  }
+
+  .author-comment {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .button-delete {
+    background: 0;
+    border: 0;
+
+    &:hover {
+      color: var(--light-grey);
+    }
+  }
+}

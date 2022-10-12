@@ -2,13 +2,8 @@
   <div class="container">
     <h1>Edit Simple</h1>
 
-    <% if user_signed_in? %>
-      <% if current_user.id == @article.user_id %>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
         <%= render 'form', article: @article %>
-      <% else %>
-        <p> You cannot take this action </p>
-        <p><a href="/">Back</a></p>
-      <% end %>
     <% else %>
       <p> You cannot take this action </p>
       <p><a href="/">Back</a></p>

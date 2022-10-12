@@ -1,0 +1,10 @@
+<div class="comments-form">
+    <%= form_with model: comment do |comment_form| %>
+      <p><%= comment_form.label :body %></p>
+      <%= comment_form.text_area :body, required: true, placeholder: 'Write comment text here..', class: 'input big-input' %>
+
+      <div class="bt">
+        <%= comment_form.submit class: 'button' %>
+      </div>
+  <% end %>
+</div>
