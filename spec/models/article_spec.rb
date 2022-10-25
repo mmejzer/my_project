@@ -2,19 +2,21 @@
 
 require 'rails_helper'
 
-describe Article, type: :model do
+describe Article do
   let(:user) { build(:user) }
 
-  context 'public article' do 
+  context 'when public article' do
     let(:article) { build(:article, status: 'public', user: user) }
-    it 'with valid attributes' do 
+
+    it 'with valid attributes' do
       expect(article).to be_valid
     end
   end
 
-  context 'draft' do
+  context 'when draft' do
     let(:article) { build(:article, status: 'draft', user: user) }
-    it 'valid attributes draft' do     
+
+    it 'valid attributes draft' do
       expect(article).to be_valid
     end
   end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe User, type: :model do
+describe User do
   let(:user) { build(:user) }
 
   it 'is valid with valid attributes' do
