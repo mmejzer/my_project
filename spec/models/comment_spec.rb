@@ -10,4 +10,12 @@ describe Comment do
   it 'with valid attributes' do
     expect(comment).to be_valid
   end
+
+  context 'with blank body' do
+    let(:comment) { build(:comment, body: '', article: article, user: user) }
+
+    it 'not valid' do
+      expect(comment).not_to be_valid
+    end
+  end
 end

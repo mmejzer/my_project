@@ -95,6 +95,7 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
   Capybara.javascript_driver = :selenium
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
@@ -108,6 +109,4 @@ RSpec.configure do |config|
 
     Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
-
-  Capybara.javascript_driver = :selenium
 end
