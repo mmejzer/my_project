@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class OrderMailer < ApplicationMailer
-  default to: ENV.fetch('GMAIL_USER')
+  default to: ENV.fetch('GMAIL_USER', nil)
 
   def contacts_mail(params)
     @name = params[:name]

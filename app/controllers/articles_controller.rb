@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit; end
+
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
@@ -25,8 +27,6 @@ class ArticlesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def edit; end
 
   def update
     if @article.update(article_params)

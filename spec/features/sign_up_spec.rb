@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'create user', js: true do
+RSpec.feature 'create user' do
   scenario 'empty first_name, last_name, email and password' do
     visit new_user_registration_path
     click_button 'Sign up'
