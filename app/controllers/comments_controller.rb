@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :set_comment, only: %i[edit update destroy]
 
+  def edit; end
+
   def create
     @comment = @article.comments.new(comment_params)
     @comment.user_id = current_user.id
@@ -15,8 +17,6 @@ class CommentsController < ApplicationController
       redirect_to article_path(@article), alert: "Error! Comment can't be create"
     end
   end
-
-  def edit; end
 
   def update
     if @comment.update(comment_params)
