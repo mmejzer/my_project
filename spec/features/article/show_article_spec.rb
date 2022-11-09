@@ -30,7 +30,7 @@ describe 'Article' do
     let(:article) { create(:article, title: 'Title', body: 'article', user: user) }
   end
 
-  feature 'Show article' do
+  feature 'Show mine article' do
     include_context 'with authorized user'
     include_context 'with article'
 
@@ -46,30 +46,30 @@ describe 'Article' do
     end
   end
 
-  # feature 'Show article' do
-  #   include_context 'with article'
-  #   include_context 'with no authorized user'
+  feature 'Show article' do
+    include_context 'with article'
+    include_context 'with no authorized user'
 
-  #   scenario 'as guest' do
-  #     visit article_path(article)
-  #     expect(page).to have_content article.title
-  #     expect(page).not_to  have_link(href: "/articles/#{article.id}/edit")
-  #     expect(page).not_to have_css(".button-delete")
-  #     expect(page).to have_content article.body
-  #   end
-  # end
+    scenario 'as guest' do
+      visit article_path(article)
+      expect(page).to have_content article.title
+      expect(page).not_to have_link(href: "/articles/#{article.id}/edit")
+      expect(page).not_to have_css('.button-delete')
+      expect(page).to have_content article.body
+    end
+  end
 
-  # feature 'Show article' do
-  #   include_context 'with authorized user'
-  #   include_context 'with article'
-  #   include_context 'with authorized user2'
+  feature 'Show stranger article' do
+    include_context 'with authorized user'
+    include_context 'with article'
+    include_context 'with authorized user2'
 
-  #   scenario 'as authorized user not author' do
-  #     visit article_path(article)
-  #     expect(page).to have_content article.title
-  #     expect(page).not_to  have_link(href: "/articles/#{article.id}/edit")
-  #     expect(page).not_to have_css(".button-delete")
-  #     expect(page).to have_content article.body
-  #   end
-  # end
+    scenario 'as user not author' do
+      visit article_path(article)
+      expect(page).to have_content article.title
+      expect(page).not_to have_link(href: "/articles/#{article.id}/edit")
+      expect(page).not_to have_css('.button-delete')
+      expect(page).to have_content article.body
+    end
+  end
 end
