@@ -41,7 +41,7 @@ describe 'Article' do
     scenario 'as author' do
       expect(page).to have_content article.title
       expect(page).to have_link(href: "/articles/#{article.id}/edit")
-      expect(page).to have_css(".button-delete")
+      expect(page).to have_css('.button-delete')
       expect(page).to have_content article.body
     end
   end

@@ -33,16 +33,16 @@ describe Article do
   #     expect(page).to have_content "Article '#{article.title}' deleted!"
   #   end
   # end
-    let(:user) { create(:user) }
-    let(:article) { build(:article) }
+  let(:user) { create(:user) }
+  let(:article) { build(:article) }
 
-    context 'when article present' do
-      it 'deletes article' do
-        article.save
+  context 'when article present' do
+    it 'deletes article' do
+      article.save
 
-        expect { article.reload }.not_to raise_error
-        expect { article.destroy }.to change(described_class, :count).by(-1)
-        expect { article.reload }.to raise_error(ActiveRecord::RecordNotFound)
-      end
+      expect { article.reload }.not_to raise_error
+      expect { article.destroy }.to change(described_class, :count).by(-1)
+      expect { article.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
+  end
 end

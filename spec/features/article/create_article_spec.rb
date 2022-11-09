@@ -12,18 +12,18 @@ describe 'Article' do
   end
 
   shared_context 'with no authorized user' do
-  	let(:user) { create(:user) }
-  	before do
+    let(:user) { create(:user) }
+    before do
       sign_out user
     end
   end
 
-  feature 'Create article' do
+  feature 'Create valid article' do
     include_context 'with authorized user'
 
     before do
       visit new_article_path
-  	end
+    end
 
     scenario 'with valid attributes' do
       fill_in 'Title', with: 'Title'
