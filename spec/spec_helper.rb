@@ -97,7 +97,6 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
   Capybara.javascript_driver = :selenium
   Capybara.register_driver :selenium do |app|
-    Capybara::Selenium::Driver.new(app, browser: :chrome)
     options = ::Selenium::WebDriver::Chrome::Options.new
 
     options.add_argument('--headless')
@@ -108,6 +107,4 @@ RSpec.configure do |config|
 
     Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
-
-  Capybara.javascript_driver = :selenium
 end
