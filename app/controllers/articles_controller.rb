@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
@@ -43,7 +44,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
   def set_article
     @article = Article.find(params[:id])
   end
