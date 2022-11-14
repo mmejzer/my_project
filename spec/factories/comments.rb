@@ -2,6 +2,8 @@
 
 FactoryBot.define do
   factory :comment do
-    body { 'MyText' }
+    body  { 'Body comment test' }
+    user factory: :user
+    article factory: :article
   end
 end
