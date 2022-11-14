@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'erb_lint', require: false
   gem 'factory_bot_rails'
+  gem 'jquery-rails'
   gem 'rspec-rails', '~> 3.9'
   gem 'rspec-support', '~> 3.9.4'
   gem 'rubocop', require: false
