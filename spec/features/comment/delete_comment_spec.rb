@@ -9,13 +9,11 @@ describe Comment do
   feature 'Delete comment' do
     before do
       sign_in user
+      described_class.create(user: user, article: article, body: 'Text comment')
       visit article_path(article)
     end
 
     scenario 'as author', js: true do
-      described_class.create(user: user, article: article, body: 'Text comment')
-      visit article_path(article)
-
       element = find('.right-side-buttons')
       expect(element).to have_css('.button-delete')
       message = accept_alert do

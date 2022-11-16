@@ -13,7 +13,7 @@ describe Comment do
     end
 
     scenario 'when mine comment' do
-      comment = described_class.create(user: user, article: article, body: '12345')
+      comment = described_class.create(user: user, article: article, body: 'Text comment')
       visit article_path(article)
 
       expect(page).to have_content "#{comment.user.first_name} #{comment.user.last_name}"
@@ -31,7 +31,7 @@ describe Comment do
     end
 
     scenario 'when not mine comment (not be author comment)' do
-      comment = described_class.create(user: user, article: article, body: '12345')
+      comment = described_class.create(user: user, article: article, body: 'Text comment')
       visit article_path(article)
 
       expect(page).to have_content "#{comment.user.first_name} #{comment.user.last_name}"
@@ -44,7 +44,7 @@ describe Comment do
 
   feature 'Show as not authorized user' do
     scenario 'when show guest' do
-      comment = described_class.create(user: user, article: article, body: '12345')
+      comment = described_class.create(user: user, article: article, body: 'Text comment')
       visit article_path(article)
 
       expect(page).to have_content "#{comment.user.first_name} #{comment.user.last_name}"

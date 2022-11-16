@@ -4,20 +4,18 @@ require 'rails_helper'
 
 describe Comment do
   let(:user) { create(:user) }
+  let(:user2) { create(:user) }
   let(:article) { create(:article, user: user) }
 
   feature 'Edit comment as author' do
     before do
       sign_in user
+      described_class.create(user: user, article: article, body: 'Text comment')
       visit article_path(article)
     end
 
-    scenario 'when valid attribute', js: true do
-      described_class.create(user: user, article: article, body: 'Text comment')
-      visit article_path(article)
-
+    scenario 'when valid attribute' do
       find('.right-side-buttons').find('.edit-link').click
-
       find('.js-edit-comment-form').fill_in 'Body', with: 'Test edit comment text'
       find('.js-edit-comment-form').click_button 'Update Comment'
 
@@ -27,11 +25,7 @@ describe Comment do
     end
 
     scenario 'when not valid attribute', js: true do
-      described_class.create(user: user, article: article, body: 'Text comment')
-      visit article_path(article)
-
       find('.right-side-buttons').find('.edit-link').click
-
       find('.js-edit-comment-form').fill_in 'Body', with: ''
       find('.js-edit-comment-form').click_button 'Update Comment'
 
