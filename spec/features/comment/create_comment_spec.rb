@@ -3,30 +3,12 @@
 require 'rails_helper'
 
 describe 'Comment' do
-  shared_context 'with authorized user' do
-    let(:user) { create(:user) }
-
-    before do
-      sign_in user
-    end
-  end
-
-  shared_context 'with no authorized user' do
-    let(:user) { create(:user) }
-    before do
-      sign_out user
-    end
-  end
-
-  shared_context 'with article' do
-    let(:article) { create(:article, user: user) }
-  end
+  let(:user) { create(:user) }
+  let(:article) { create(:article, user: user) }
 
   feature 'Create comment' do
-    include_context 'with authorized user'
-    include_context 'with article'
-
     before do
+      sign_in user
       visit article_path(article)
     end
 
@@ -48,11 +30,12 @@ describe 'Comment' do
   end
 
   feature 'Create article' do
-    include_context 'with article'
-    include_context 'with no authorized user'
+    before do
+      sign_out user
+      visit article_path(article)
+    end
 
     scenario 'with no authorized' do
-      visit article_path(article)
       expect(page).to have_content 'You must be logged in to leave a comment. Do you want to login/register?'
       expect(page).to have_link('login', href: '/users/sign_in')
       expect(page).to have_link('register', href: '/users/sign_up')
