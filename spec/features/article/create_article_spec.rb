@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'Article' do
   let(:user) { create(:user) }
 
-  feature 'Create article when authorized user ' do
+  feature 'Create article when authorized user' do
     before do
       sign_in user
       visit new_article_path
@@ -20,8 +20,8 @@ describe 'Article' do
       expect(page).to have_content 'Your article was created'
       expect(page).to have_content 'Title'
       expect(page).to have_content 'article'
-      expect(page).to have_content "Author: #{article.user.first_name} #{article.user.last_name}"
-      expect(page).to have_content "Posted on #{article.created_at.strftime('%H:%M %d %B %Y')}"
+      expect(page).to have_content "Author: #{Article.last.user.first_name} #{Article.last.user.last_name}"
+      expect(page).to have_content "Posted on #{Article.last.created_at.strftime('%H:%M %d %B %Y')}"
     end
 
     scenario 'with not valid attributes' do
