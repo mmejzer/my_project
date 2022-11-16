@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
     @article.user_id = current_user.id
 
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: 'Your article was created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article
+      redirect_to @article, notice: 'Your article was edited'
     else
       render :edit, status: :unprocessable_entity
     end

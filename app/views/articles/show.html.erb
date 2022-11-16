@@ -27,6 +27,7 @@
     </div>
 
     <p class="publication-date">
+      Author: <%= @article.user.first_name %> <%= @article.user.last_name %><br>
       Posted on <%= @article.created_at.strftime('%H:%M %d %B %Y') %>
       <% unless @article.created_at == @article.updated_at %>
         <br>Update on <%= @article.updated_at.strftime('%H:%M %d %B %Y') %>

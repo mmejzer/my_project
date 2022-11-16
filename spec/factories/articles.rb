@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :article do
-    title { Faker::String.random }
-    body  { Faker::String.random }
+    title { 'Title article test' }
+    body  { 'Body article test' }
     status { 'public' }
     user factory: :user
   end

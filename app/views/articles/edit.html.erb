@@ -5,7 +5,7 @@
     <% if user_signed_in? && current_user.id == @article.user_id %>
         <%= render 'form', article: @article %>
     <% else %>
-      <p> You cannot take this action </p>
+      <p> You can not take this action.</p>
       <p><a href="/">Back</a></p>
     <% end %>
   </div>

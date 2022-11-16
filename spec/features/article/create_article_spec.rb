@@ -3,25 +3,11 @@
 require 'rails_helper'
 
 describe 'Article' do
-  shared_context 'with authorized user' do
-    let(:user) { create(:user) }
+  let(:user) { create(:user) }
 
+  feature 'Create article when authorized user ' do
     before do
       sign_in user
-    end
-  end
-
-  shared_context 'with no authorized user' do
-    let(:user) { create(:user) }
-    before do
-      sign_out user
-    end
-  end
-
-  feature 'Create valid article' do
-    include_context 'with authorized user'
-
-    before do
       visit new_article_path
     end
 
@@ -31,15 +17,24 @@ describe 'Article' do
       click_button 'Create Article'
 
       expect(page).to have_current_path "/articles/#{Article.last.id}"
+      expect(page).to have_content 'Your article was created'
       expect(page).to have_content 'Title'
       expect(page).to have_content 'article'
+      expect(page).to have_content "Author: #{article.user.first_name} #{article.user.last_name}"
+      expect(page).to have_content "Posted on #{article.created_at.strftime('%H:%M %d %B %Y')}"
+    end
+
+    scenario 'with not valid attributes' do
+      fill_in 'Title', with: ''
+      fill_in 'Body', with: ''
+      click_button 'Create Article'
+
+      expect(page).not_to have_content 'Your article was created'
     end
   end
 
   feature 'Create article' do
-    include_context 'with no authorized user'
-
-    scenario 'with no authorized' do
+    scenario 'when no authorized user' do
       visit new_article_path
       expect(page).to have_content 'You need to sign in or sign up before continuing.'
     end

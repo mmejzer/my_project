@@ -3,23 +3,12 @@
 require 'rails_helper'
 
 describe Article do
-  shared_context 'with authorized user' do
-    let(:user) { create(:user) }
-
-    before do
-      sign_in user
-    end
-  end
-
-  shared_context 'with article' do
-    let(:article) { create(:article, title: 'Title', body: 'article', user: user) }
-  end
+  let(:user) { create(:user) }
+  let(:article) { create(:article, title: 'Title', body: 'article', user: user) }
 
   feature 'Delete article' do
-    include_context 'with authorized user'
-    include_context 'with article'
-
     before do
+      sign_in user
       visit article_path(article)
     end
 
