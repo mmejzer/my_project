@@ -32,6 +32,12 @@ jobs:
 
       - name: Setup database
         run: bin/rails db:setup
-    
-      - name: Check functional test
+
+      - name: Yarn Install
+        run: yarn install
+
+      - name: Compile Webpacker
+        run: bundle exec rails webpacker:compile
+
+      - name: Run test
         run: bin/test
