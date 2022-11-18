@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe User do
@@ -41,6 +43,6 @@ describe User do
     scenario 'empty first_name, last_name, email and password' do
       click_button 'Update'
       expect(page).not_to have_content('Your account has been updated successfully.')
-    end  
+    end
   end
 end

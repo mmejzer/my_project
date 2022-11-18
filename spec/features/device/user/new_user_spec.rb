@@ -22,7 +22,7 @@ describe User do
       visit new_user_registration_path
       fill_in 'first_name', with: Faker::Name.first_name
       fill_in 'Last name', with: Faker::Name.last_name
-      fill_in 'Email', with:'test@test.ru'
+      fill_in 'Email', with: 'test@test.ru'
       fill_in 'Password', with: '123456'
       fill_in 'Password confirmation', with: '123456'
       click_button 'Sign up'
@@ -55,6 +55,6 @@ describe User do
       visit new_user_registration_path
       click_button 'Sign up'
       expect(page).not_to have_content('Welcome! You have signed up successfully.')
-    end  
+    end
   end
 end

@@ -17,8 +17,8 @@ describe User do
 
     scenario 'with not valid params' do
       visit new_user_session_url
-      fill_in 'Email', with: user.email + '11'
-      fill_in 'Password', with: user.password + '11'
+      fill_in 'Email', with: "#{user.email}11"
+      fill_in 'Password', with: "#{user.password}11"
       click_button 'Log in'
       expect(page).to have_content('Invalid Email or password.')
     end
