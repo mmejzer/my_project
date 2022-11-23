@@ -1,5 +1,5 @@
 <div class="form-sample">
-  <%= form_with model: article do |form| %>
+  <%= form_with model: article, data: { turbo: false } do |form| %>
 
   <div class="errors">
     <% article.errors.full_messages_for(:title).each do |message| %>
@@ -33,7 +33,7 @@
   </div><br>
 
   <div class="bt">
-    <%= form.submit nil, class: 'button' %>
+    <%= form.submit class: 'button' %>
   </div>
 <% end %>
 </div>
