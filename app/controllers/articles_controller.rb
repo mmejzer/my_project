@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
@@ -22,7 +23,7 @@ class ArticlesController < ApplicationController
     @article.user_id = current_user.id
 
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: 'Your article was created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article
+      redirect_to @article, notice: 'Your article was edited'
     else
       render :edit, status: :unprocessable_entity
     end
