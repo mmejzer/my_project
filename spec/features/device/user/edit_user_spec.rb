@@ -51,7 +51,7 @@ describe 'Edit user' do
     visit edit_user_registration_path(user)
 
     click_button 'Update'
-      
+
     expect(page).not_to have_content('Your account has been updated successfully.')
   end
 end

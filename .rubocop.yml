@@ -31,4 +31,7 @@ RSpec/ExampleLength:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false
   

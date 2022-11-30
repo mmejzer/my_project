@@ -30,4 +30,3 @@ describe User do
     expect(page).not_to have_content('Signed in successfully.')
   end
 end
-
