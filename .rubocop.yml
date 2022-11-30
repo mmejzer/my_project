@@ -28,3 +28,10 @@ RSpec/Capybara/FeatureMethods:
 
 RSpec/ExampleLength:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+  
