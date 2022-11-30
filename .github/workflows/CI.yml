@@ -40,7 +40,5 @@ jobs:
         run: bundle exec rails webpacker:compile
 
       - name: Run test
-        with:
-            gmail_user: ${{secrets.GMAIL_USER}}
         run: bin/test
         
