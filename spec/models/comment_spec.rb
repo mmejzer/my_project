@@ -9,7 +9,7 @@ describe Comment do
   context 'when public comment' do
     let(:comment) { build(:comment, user: user, article: article) }
 
-    it 'with valid attributes' do
+    it 'is valid' do
       expect(comment).to be_valid
     end
   end
@@ -17,7 +17,7 @@ describe Comment do
   context 'with blank body' do
     let(:comment) { build(:comment, body: '', user: user, article: article) }
 
-    it 'not valid' do
+    it 'is not valid' do
       expect(comment).not_to be_valid
     end
   end
