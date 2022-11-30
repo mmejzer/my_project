@@ -41,6 +41,6 @@ jobs:
 
       - name: Run test
         with:
-            GMAIL_USER: ${{secrets.GMAIL_USER}}
+            gmail_user: ${{secrets.GMAIL_USER}}
         run: bin/test
         
